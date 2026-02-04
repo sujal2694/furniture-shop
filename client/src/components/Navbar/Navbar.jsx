@@ -38,7 +38,7 @@ const Navbar = () => {
                             <ul className='opt-list'>
                                 <li className='opts'>Sign Up</li>
                                 <hr />
-                                <li className='opts'>
+                                <li className='opts opt-flex'>
                                     <i className='bx bx-arrow-out-right-square-half'></i>
                                     <p>Log Out</p>
                                 </li>
