@@ -9,6 +9,8 @@ export const StoreContextProvider = ({children}) => {
 
     const [menu, setMenu] = useState("home");
     const [slider, setSlider] = useState(false);
+    const [currState, setCurrState] = useState("sign up");
+    const [loginPopUp, setLoginPopUp] = useState(false);
 
 
     const contextValue = {
@@ -16,6 +18,10 @@ export const StoreContextProvider = ({children}) => {
         setMenu,
         slider,
         setSlider,
+        currState,
+        setCurrState,
+        loginPopUp,
+        setLoginPopUp,
     }
 
     return(

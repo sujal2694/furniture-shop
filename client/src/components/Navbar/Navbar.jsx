@@ -4,7 +4,7 @@ import './Navbar.css'
 import {useNavigate} from 'react-router-dom'
 
 const Navbar = () => {
-    const { menu, setMenu, slider, setSlider } = useContext(StoreContext);
+    const { menu, setMenu, slider, setSlider, setLoginPopUp } = useContext(StoreContext);
 
     const navigate = useNavigate();
     return (
@@ -36,7 +36,7 @@ const Navbar = () => {
                         <i className='bx bx-user'></i>
                         <div className='sign-in-opt'>
                             <ul className='opt-list'>
-                                <li className='opts'>Sign Up</li>
+                                <li className='opts' onClick={()=>setLoginPopUp(true)}>Sign Up</li>
                                 <hr />
                                 <li className='opts opt-flex'>
                                     <i className='bx bx-arrow-out-right-square-half'></i>
