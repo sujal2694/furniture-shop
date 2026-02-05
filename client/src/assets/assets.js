@@ -1,3 +1,11 @@
+import hero_img from './hero-img.jpeg'
+
+
+export const assets = {
+  hero_img,
+}
+
+
 export const products = {
     "sofas": [
       {

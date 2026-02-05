@@ -1,0 +1,34 @@
+.products-container{
+    width: 85vw;
+    margin: auto;
+    margin-top: 100px;
+}
+
+.head-pro p{
+    text-align: center;
+    font-size: 12px;
+    font-weight: 500;
+    color: #999;
+    letter-spacing: 0.8px;
+}
+
+.products-heading{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.products-heading h1{
+    font-size: 40px;
+    font-family: "dm serif text", sans-serif;
+    letter-spacing: 0.8px;
+    color: #2c2b2b;
+}
+
+.products-heading hr{
+    border: none;
+    background: #000;
+    width: 50px;
+    height: 2px;
+}
