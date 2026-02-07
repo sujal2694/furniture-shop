@@ -8,6 +8,7 @@
     top: 0;
     left: 0;
     background-color: #0505053d;
+    z-index: 100;
 }
 
 .login-form{

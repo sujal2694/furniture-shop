@@ -86,6 +86,7 @@
     width: 150px;
     box-shadow: 0 0 10px 2px #c9c9c953;
     display: none;
+    z-index: 5;
 }
 
 .sign-in-opt .opt-list {
@@ -114,10 +115,10 @@
     cursor: pointer;
 }
 
-.search,
-.cart,
-.user {
-    font-size: 30px;
+.search img,
+.cart img,
+.user img {
+    width: 20px;
 }
 
 .close {

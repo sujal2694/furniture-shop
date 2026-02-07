@@ -1,6 +1,7 @@
 import React, { useContext } from 'react'
 import './LoginPage.css'
 import { StoreContext } from '../../context/Context'
+import { assets } from '../../assets/assets';
 
 const LoginPage = () => {
     const { currState, setCurrState, setLoginPopUp } = useContext(StoreContext);
@@ -9,7 +10,7 @@ const LoginPage = () => {
             <div className='login-form'>
                 <div className='form-head'>
                     <h1>{currState}</h1>
-                    <i className='bx bx-x' onClick={()=>setLoginPopUp(false)}></i>
+                    <img src={assets.cross_icon} alt='' onClick={()=>setLoginPopUp(false)}></img>
                 </div>
 
                 <form>

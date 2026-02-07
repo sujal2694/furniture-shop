@@ -2,6 +2,7 @@ import React, { useContext } from 'react'
 import { StoreContext } from '../../context/Context'
 import './Navbar.css'
 import {useNavigate} from 'react-router-dom'
+import { assets } from '../../assets/assets'
 
 const Navbar = () => {
     const { menu, setMenu, slider, setSlider, setLoginPopUp } = useContext(StoreContext);
@@ -27,13 +28,13 @@ const Navbar = () => {
                 </div>
                 <div className="nav-right">
                     <div className='search'>
-                        <i className='bx bx-search'></i>
+                        <img src={assets.search_icon} alt="" />
                     </div>
                     <div className='cart'>
                         <i className='bx bx-cart'></i>
                     </div>
                     <div className='user'>
-                        <i className='bx bx-user'></i>
+                        <img src={assets.profile_icon} alt="" />
                         <div className='sign-in-opt'>
                             <ul className='opt-list'>
                                 <li className='opts' onClick={()=>setLoginPopUp(true)}>Sign Up</li>
