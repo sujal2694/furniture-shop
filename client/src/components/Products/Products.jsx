@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './Products.css'
 import { assets, products } from '../../assets/assets'
 
@@ -10,23 +10,79 @@ const Products = () => {
                     <h1>Latest Collections</h1>
                     <hr />
                 </div>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae</p>
+                <p>Shop now and get amazing deals from us.</p>
             </div>
             <div className='products-list'>
                 {products.sofa.map((item, index) => {
-                    return (
-                        <div key={index} className='item-box'>
-                            <div className="item">
-                                <div className='img-container'>
-                                    <img src={item.image} alt="" />
-                                </div>
-                                <div className='item-details'>
-                                    <h3 className='item-name'>{item.title}</h3>
-                                    <p className='item-price'>₹{item.price}</p>
+                    if (index % 2 === 0) {
+                        return (
+                            <div key={index} className='item-box'>
+                                <div className="item">
+                                    <div className='img-container'>
+                                        <img src={item.image} alt="" />
+                                    </div>
+                                    <div className='item-details'>
+                                        <h3 className='item-name'>{item.title}</h3>
+                                        <p className='item-price'>₹ {item.price}</p>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    )
+                        )
+                    }
+                })}
+
+                {products.bed.map((item, index) => {
+                    if (index % 2 !== 0) {
+                        return (
+                            <div key={index} className='item-box'>
+                                <div className="item">
+                                    <div className='img-container'>
+                                        <img src={item.image} alt="" />
+                                    </div>
+                                    <div className='item-details'>
+                                        <h3 className='item-name'>{item.title}</h3>
+                                        <p className='item-price'>₹ {item.price}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        )
+                    }
+                })}
+
+                {products.center_table.map((item, index) => {
+                    if (index % 3 !== 0) {
+                        return (
+                            <div key={index} className='item-box'>
+                                <div className="item">
+                                    <div className='img-container'>
+                                        <img src={item.image} alt="" />
+                                    </div>
+                                    <div className='item-details'>
+                                        <h3 className='item-name'>{item.title}</h3>
+                                        <p className='item-price'>₹ {item.price}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        )
+                    }
+                })}
+
+                {products.refrigerator.map((item, index) => {
+                    if (index % 2 === 0) {
+                        return (
+                            <div key={index} className='item-box'>
+                                <div className="item">
+                                    <div className='img-container'>
+                                        <img className='img' src={item.image} alt="" />
+                                    </div>
+                                    <div className='item-details'>
+                                        <h3 className='item-name'>{item.title}</h3>
+                                        <p className='item-price'>₹ {item.price}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        )
+                    }
                 })}
             </div>
         </div>
