@@ -97,6 +97,13 @@
 }
 
 
+@media (max-width: 550px) {
+    .products-list{
+        grid-template-columns: 1fr;
+    }
+}
+
+
 
 
 

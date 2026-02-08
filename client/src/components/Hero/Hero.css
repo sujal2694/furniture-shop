@@ -74,3 +74,12 @@
         border-radius: 5px;
     }
 }
+
+@media (max-width: 650px) {
+    .text-container p {
+        margin-top: -5px;
+    }
+     .text-container .hero-btn{
+        margin-top: -10px;
+     }
+}

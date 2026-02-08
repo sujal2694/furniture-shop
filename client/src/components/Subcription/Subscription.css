@@ -54,3 +54,28 @@
     font-size: 16px;
     border-radius: 0 5px 5px 0;
 }
+
+
+
+
+
+@media (max-width: 650px) {
+
+    .subscription-heading h1{
+        margin-bottom: 6px;
+    }
+
+    .subscription-heading p{
+        font-size: 10px;
+    }
+
+    .subscription-form form{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .subscription-form form input{
+        width: 200px;
+    }
+}

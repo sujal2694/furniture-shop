@@ -63,3 +63,9 @@
         gap: 7rem;
     }
 }
+
+@media (max-width: 650px) {
+    .footer .links{
+        gap: 3rem;
+    }
+}
