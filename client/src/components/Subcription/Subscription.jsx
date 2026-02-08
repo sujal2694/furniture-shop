@@ -11,7 +11,7 @@ const Subcription = () => {
         </div>
         <div className="subscription-form">
             <form>
-                <input type="text" placeholder='Type here' />
+                <input type="text" placeholder='Type here' required/>
                 <button type='submit'>Subscribe</button>
             </form>
         </div>

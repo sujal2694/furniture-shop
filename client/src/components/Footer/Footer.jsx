@@ -12,6 +12,7 @@ const Footer = () => {
 
         <div className="links">
             <ul className="nav-links">
+                <h1>Quick Links</h1>
                <li>Home</li>
                <li>About</li>
                <li>Products</li>
@@ -19,6 +20,7 @@ const Footer = () => {
             </ul>
 
             <ul className="social-links">
+                <h1>Social Links</h1>
                 <li>
                     <i className='bx bx-facebook'></i>
                     <p>Facebook</p>

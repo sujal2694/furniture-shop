@@ -22,7 +22,7 @@ const Navbar = () => {
                     <ul className="nav-list">
                         <li onClick={() => setMenu("home")} className="nav-list-item" id={menu === "home" ? "menu" : ""}>Home</li>
                         <li onClick={() => setMenu("about")} className="nav-list-item" id={menu === "about" ? "menu" : ""}>about</li>
-                        <li onClick={() => setMenu("products")} className="nav-list-item" id={menu === "products" ? "menu" : ""}>products</li>
+                        <li onClick={() => {setMenu("products"), navigate('/products')}} className="nav-list-item" id={menu === "products" ? "menu" : ""}>products</li>
                         <li onClick={() => setMenu("contact")} className="nav-list-item" id={menu === "contact" ? "menu" : ""}>contact us</li>
                     </ul>
                 </div>
