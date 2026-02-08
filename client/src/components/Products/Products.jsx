@@ -1,5 +1,6 @@
 import React from 'react'
 import './Products.css'
+import { assets } from '../../assets/assets'
 
 const Products = () => {
     return (
