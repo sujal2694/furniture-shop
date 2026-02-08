@@ -1,20 +1,20 @@
-.hero{
+.hero {
     width: 100%;
 }
 
-.img-container{
+.img-container {
     width: 85vw;
     margin: auto;
     position: relative;
 }
 
-.img-container img{
+.img-container img {
     width: 100%;
     border: 1px solid #dedddd;
     box-shadow: 0 0 10px 1px #dedddd43;
 }
 
-.text-container{
+.text-container {
     position: absolute;
     top: 0;
     left: 6%;
@@ -25,7 +25,7 @@
     flex-direction: column;
 }
 
-.text-container h1{
+.text-container h1 {
     font-size: 40px;
     width: 400px;
     font-weight: 600;
@@ -34,14 +34,14 @@
     color: white;
 }
 
-.text-container p{
+.text-container p {
     font-size: 14px;
     width: 350px;
     margin: 20px 0;
     color: #515252;
 }
 
-.text-container .hero-btn{
+.text-container .hero-btn {
     width: 150px;
     padding: 10px 0;
     border: 1px solid #151515;
@@ -53,6 +53,24 @@
     cursor: pointer;
 }
 
-.text-container .hero-btn:hover{
+.text-container .hero-btn:hover {
     background: #000;
+}
+
+
+@media (max-width: 750px) {
+    .text-container h1 {
+        font-size: 33px;
+    }
+
+    .text-container p {
+        font-size: 10px;
+    }
+
+    .text-container .hero-btn {
+        width: 100px;
+        padding: 5px 0;
+        font-size: 13px;
+        border-radius: 5px;
+    }
 }

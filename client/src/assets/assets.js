@@ -22,14 +22,14 @@ import table_img_5 from './table-img-5.webp'
 import refrigerator_img_1 from './refrigerator-img-1.webp'
 import refrigerator_img_2 from './refrigerator-img-2.webp'
 import refrigerator_img_3 from './refrigerator-img-3.webp'
-import refrigerator_img_4 from './refrigerator-img-4.webp'
+import refrigerator_img_4 from './refrigerator-img-4.jpg'
 import refrigerator_img_5 from './refrigerator-img-5.webp'
 import ac_img_1 from './ac-img-1.webp'
 import ac_img_2 from './ac-img-2.webp'
 import ac_img_3 from './ac-img-3.webp'
 import ac_img_4 from './ac-img-4.webp'
 import ac_img_5 from './ac-img-5.webp'
-import microwave_img_1 from './microwave-img-1.webp'
+import microwave_img_1 from './microwave_-img-1.webp'
 import microwave_img_2 from './microwave-img-2.webp'
 import microwave_img_3 from './microwave-img-3.webp'
 import microwave_img_4 from './microwave-img-4.webp'
@@ -52,7 +52,7 @@ export const products = {
       discount: 50,
       originalPrice: 75998,
       ratings:3.3,
-      category: sofa,
+      category: "sofa",
       description:{
         brand: "Contemporary",
         Assembly: "NO",
@@ -72,7 +72,7 @@ export const products = {
       originalPrice: 34403,
       ratings:4.7,
       discount: 56,
-      category: sofa,
+      category: "sofa",
       description:{
         brand: "SOCOZI",
         Assembly: "NO",
@@ -91,7 +91,7 @@ export const products = {
       price:7478,
       originalPrice: 15999,
       ratings:3.2,
-      category: sofa,
+      category: "sofa",
       discount: 53,
       description:{
         brand: "WESTIDO",
@@ -112,7 +112,7 @@ export const products = {
       discount:60,
       originalPrice:27999,
       ratings:5,
-      category: sofa,
+      category: "sofa",
       description:{
         brand: "SOCOZI",
         Assembly: "NO",
@@ -132,7 +132,7 @@ export const products = {
       discount: 33,
       originalPrice: 19999,
       ratings:3.9,
-      category: sofa,
+      category: "sofa",
       description:{
         brand: "Duroflex",
         Assembly: "YES",
@@ -249,7 +249,7 @@ export const products = {
       },
     }
   ],
-refrigerator: [
+  refrigerator: [
     {
       title: "Haier 185L 2 Star Direct Cool Single Door Refrigerator | Toughened Glass Shelves | Large Veg Box | Fast Ice Making | Longer Cooling Retention | Easy Clean Back (HED-19TMS-N, Moon Silver)",
       image: refrigerator_img_1,
