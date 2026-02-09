@@ -7,10 +7,17 @@ export const StoreContext = createContext(null);
 
 export const StoreContextProvider = ({children}) => {
 
+    const url = "http://localhost:4000"
     const [menu, setMenu] = useState("home");
     const [slider, setSlider] = useState(false);
     const [currState, setCurrState] = useState("sign up");
     const [loginPopUp, setLoginPopUp] = useState(false);
+    const [userData, setUserData] = useState({
+        name:"",
+        email:"",
+        password:"",
+    });
+    const [token, setToken] = useState("");
 
 
     const contextValue = {
@@ -22,6 +29,11 @@ export const StoreContextProvider = ({children}) => {
         setCurrState,
         loginPopUp,
         setLoginPopUp,
+        url,
+        userData,
+        setUserData,
+        setToken,
+        token,
     }
 
     return(

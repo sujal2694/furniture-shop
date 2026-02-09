@@ -6,6 +6,7 @@ import Footer from './components/Footer/Footer'
 import { Route, Routes } from 'react-router-dom'
 import Home from './Pages/Home/Home'
 import ProductPage from './Pages/ProductPage/ProductPage'
+import { Toaster } from 'react-hot-toast'
 
 const App = () => {
   const { loginPopUp } = useContext(StoreContext);
@@ -14,10 +15,11 @@ const App = () => {
       {loginPopUp ? <LoginPage /> : ""}
       <Navbar />
       <Routes>
-        <Route path='/' element={<Home/>} />
-        <Route path='/products' element={<ProductPage/>} />
+        <Route path='/' element={<Home />} />
+        <Route path='/products' element={<ProductPage />} />
       </Routes>
-      <Footer/>
+      <Footer />
+      <Toaster />
     </div>
   )
 }

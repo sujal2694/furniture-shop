@@ -2,35 +2,63 @@ import React, { useContext } from 'react'
 import './LoginPage.css'
 import { StoreContext } from '../../context/Context'
 import { assets } from '../../assets/assets';
+import axios from 'axios'
+import toast from 'react-hot-toast';
 
 const LoginPage = () => {
-    const { currState, setCurrState, setLoginPopUp } = useContext(StoreContext);
+    const { currState, setCurrState, setLoginPopUp, url, setUserData, userData, setToken } = useContext(StoreContext);
+
+    const onChangeHandler = (event) => {
+        const name = event.target.name;
+        const value = event.target.value;
+        setUserData(userData => ({ ...userData, [name]: value }));
+    }
+
+    const onLogin = async (event) => {
+        event.preventDefault();
+        let newUrl = url;
+        if (currState === "sign up") {
+            newUrl += "/api/user/register"
+        } else {
+            newUrl += "/api/user/login"
+        }
+        
+        const response = await axios.post(newUrl, userData);
+        if (response.data.success) {
+            setToken(response.data.token)
+            localStorage.setItem("token", response.data.token);
+            setLoginPopUp(false);
+            toast.success("Registeration Successfull");
+        } else {
+            console.log(response.data.message);
+        }
+    }
     return (
         <div className='login-page'>
             <div className='login-form'>
                 <div className='form-head'>
                     <h1>{currState}</h1>
-                    <img src={assets.cross_icon} alt='' onClick={()=>setLoginPopUp(false)}></img>
+                    <img src={assets.cross_icon} alt='' onClick={() => setLoginPopUp(false)}></img>
                 </div>
 
-                <form>
+                <form onSubmit={onLogin}>
                     <div className="input-box">
                         {currState === "sign up"
                             ? <div className="input">
                                 <label htmlFor="username">Username</label>
-                                <input type="text" placeholder='Type here' id='username' />
+                                <input type="text" onChange={onChangeHandler} name='name' value={userData.name} placeholder='Type here' id='username' />
                             </div>
                             : ""
                         }
                         <div className="input">
                             <label htmlFor="email">Email</label>
-                            <input type="text" placeholder='Type here' id='email' />
+                            <input type="email" onChange={onChangeHandler} name='email' value={userData.email} placeholder='Type here' id='email' />
                         </div>
                         <div className="input">
                             <label htmlFor="password">Password</label>
-                            <input type="text" placeholder='Type here' id='password' />
+                            <input type="password" onChange={onChangeHandler} name='password' value={userData.password} placeholder='Type here' id='password' />
                         </div>
-                    </div>
+                    </div> 
 
                     {currState === "sign up"
                         ? <div>

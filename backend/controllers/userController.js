@@ -2,6 +2,7 @@ import jwt from 'jsonwebtoken'
 import 'dotenv/config'
 import { userModel } from '../models/userModel.js'
 import bcrypt from 'bcrypt'
+import validator from 'validator'
 
 
 const createToken = (id) => {
@@ -18,7 +19,7 @@ export const registerUser = async (req, res) => {
         }
 
         //for validating user email
-        if (validator.isEmail(email)) {
+        if (!validator.isEmail(email)) {
             return res.json({ success: false, message: "Please enter valid email address" })
         }
 
