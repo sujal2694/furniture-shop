@@ -5,9 +5,13 @@ import { useNavigate } from 'react-router-dom'
 import { assets } from '../../assets/assets'
 
 const Navbar = () => {
-    const { menu, setMenu, slider, setSlider, setLoginPopUp, token } = useContext(StoreContext);
+    const { menu, setMenu, slider, setSlider, setLoginPopUp, token, setToken } = useContext(StoreContext);
 
     const navigate = useNavigate();
+    const logout = () => {
+        localStorage.removeItem("token");
+        setToken("");
+    }
     return (
         <div className='navbar'>
             <div className='nav'>
@@ -40,7 +44,7 @@ const Navbar = () => {
                         <img src={assets.profile_icon} alt="" />
                         <div className='sign-in-opt'>
                             <ul className='opt-list'>
-                                <li className='opts opt-flex'>
+                                <li onClick={()=>logout} className='opts opt-flex'>
                                     <i className='bx bx-arrow-out-right-square-half'></i>
                                     <p>Log Out</p>
                                 </li>

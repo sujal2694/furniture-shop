@@ -4,5 +4,5 @@ import { authMiddleware } from '../middleware/auth.js';
 
 export const userRouter = express.Router();
 
-userRouter.post("/login", authMiddleware, loginUser);
+userRouter.post("/login", loginUser);
 userRouter.post('/register', registerUser);

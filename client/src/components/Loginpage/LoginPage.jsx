@@ -31,6 +31,7 @@ const LoginPage = () => {
             toast.success("Registeration Successfull");
         } else {
             console.log(response.data.message);
+            toast.error(response.data.message);
         }
     }
     return (
