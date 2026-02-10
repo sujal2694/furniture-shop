@@ -6,7 +6,7 @@ import axios from 'axios'
 import toast from 'react-hot-toast';
 
 const LoginPage = () => {
-    const { currState, setCurrState, setLoginPopUp, url, setUserData, userData, setToken } = useContext(StoreContext);
+    const { currState, setCurrState, setLoginPopUp, url, setUserData, userData, setToken, token } = useContext(StoreContext);
 
     const onChangeHandler = (event) => {
         const name = event.target.name;
@@ -22,13 +22,18 @@ const LoginPage = () => {
         } else {
             newUrl += "/api/user/login"
         }
-        
+
         const response = await axios.post(newUrl, userData);
         if (response.data.success) {
             setToken(response.data.token)
             localStorage.setItem("token", response.data.token);
             setLoginPopUp(false);
-            toast.success("Registeration Successfull");
+            setUserData({
+                name: "",
+                email: "",
+                password: ""
+            })
+            toast.success(currState === "sign up" ? "Registration successful" : "Login successful");
         } else {
             console.log(response.data.message);
             toast.error(response.data.message);
@@ -59,15 +64,13 @@ const LoginPage = () => {
                             <label htmlFor="password">Password</label>
                             <input type="password" onChange={onChangeHandler} name='password' value={userData.password} placeholder='Type here' id='password' />
                         </div>
-                    </div> 
+                    </div>
 
-                    {currState === "sign up"
+                    {!(token!=="")
                         ? <div>
-                            <button className='submit-btn' type='submit'>Create an account</button>
+                            <button className='submit-btn' type='submit'>{currState==="sign up"?"create an account":"Login"}</button>
                         </div>
-                        : <div>
-                            <button className='submit-btn' type='submit'>Log In</button>
-                        </div>
+                        : ""
                     }
 
                 </form>

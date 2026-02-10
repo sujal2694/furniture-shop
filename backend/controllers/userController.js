@@ -49,25 +49,26 @@ export const registerUser = async (req, res) => {
 }
 
 
-export const loginUser = async (req, res) => {
-    const { email, password } = req.body;
+export const loginUser = async (req,res)=>{
+    const {email,password} = req.body;
     try {
-        const user = await userModel.findOne({ email });
+        const user = await userModel.findOne({email})
 
         if (!user) {
-            return res.json({ success: false, message: "user doen't exists" })
+            return res.json({success:false,message:"User doesn't exists"})
         }
 
-        const isMatch = await bcrypt.compare(password, user.password);
+        const isMatch = await bcrypt.compare(password,user.password)
+
         if (!isMatch) {
-            return res.json({ success: false, message: "Invalid credentials" })
+            return res,json({success:false,message:"Invalid credentials"})
         }
-
+        
         const token = createToken(user._id);
-        res.json({ success: false, token });
+        res.json({success:true,token})
 
     } catch (error) {
         console.log(error);
-        return res.json({ success: false, message: "error" })
+        res.json({success:false,message:"Error"})
     }
 }

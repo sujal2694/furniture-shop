@@ -11,6 +11,7 @@ const Navbar = () => {
     const logout = () => {
         localStorage.removeItem("token");
         setToken("");
+        navigate("/");
     }
     return (
         <div className='navbar'>
@@ -44,7 +45,7 @@ const Navbar = () => {
                         <img src={assets.profile_icon} alt="" />
                         <div className='sign-in-opt'>
                             <ul className='opt-list'>
-                                <li onClick={()=>logout} className='opts opt-flex'>
+                                <li onClick={logout} className='opts opt-flex'>
                                     <i className='bx bx-arrow-out-right-square-half'></i>
                                     <p>Log Out</p>
                                 </li>
