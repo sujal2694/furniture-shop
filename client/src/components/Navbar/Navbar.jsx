@@ -25,22 +25,26 @@ const Navbar = () => {
                         <i className='bx bx-x'></i>
                     </div>
                     <ul className="nav-list">
-                        <li onClick={() => setMenu("home")} className="nav-list-item" id={menu === "home" ? "menu" : ""}>Home</li>
-                        <li onClick={() => setMenu("about")} className="nav-list-item" id={menu === "about" ? "menu" : ""}>about</li>
+                        <li onClick={() => {setMenu("home"), navigate('/')}} className="nav-list-item" id={menu === "home" ? "menu" : ""}>Home</li>
+                        <li onClick={() => {setMenu("about"), navigate('/about')}} className="nav-list-item" id={menu === "about" ? "menu" : ""}>about</li>
                         <li onClick={() => { setMenu("products"), navigate('/products') }} className="nav-list-item" id={menu === "products" ? "menu" : ""}>products</li>
-                        <li onClick={() => setMenu("contact")} className="nav-list-item" id={menu === "contact" ? "menu" : ""}>contact us</li>
+                        <li onClick={() => {setMenu("contact"), navigate('/contact')}} className="nav-list-item" id={menu === "contact" ? "menu" : ""}>contact us</li>
                     </ul>
                 </div>
                 <div className="nav-right">
                     <div className='search'>
                         <img src={assets.search_icon} alt="" />
                     </div>
-                    <div className='cart'>
+                    <div onClick={()=>navigate('/cart')} className='cart'>
                         <i className='bx bx-cart'></i>
                     </div>
-                    <div className='log-in-btn'>
-                        <button onClick={()=>setLoginPopUp(true)}>SIgn Up</button>
-                    </div>
+                    {!token
+                        ? <div className='log-in-btn'>
+                            <button onClick={() => setLoginPopUp(true)}>SIgn Up</button>
+                        </div>
+                        : ""
+                    }
+
                     {token ? <div className='user'>
                         <img src={assets.profile_icon} alt="" />
                         <div className='sign-in-opt'>

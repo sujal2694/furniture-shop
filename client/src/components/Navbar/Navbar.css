@@ -118,11 +118,13 @@
 .search img,
 .user img {
     width: 20px;
+    cursor: pointer;
 }
 
 .cart i{
     font-size: 25px;
     color:  #444444;
+    cursor: pointer;
 }
 
 .log-in-btn button{

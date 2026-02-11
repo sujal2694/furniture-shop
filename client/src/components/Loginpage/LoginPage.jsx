@@ -66,12 +66,9 @@ const LoginPage = () => {
                         </div>
                     </div>
 
-                    {!(token!=="")
-                        ? <div>
-                            <button className='submit-btn' type='submit'>{currState==="sign up"?"create an account":"Login"}</button>
-                        </div>
-                        : ""
-                    }
+                    <div>
+                        <button className='submit-btn' type='submit'>{currState === "sign up" ? "create an account" : "Login"}</button>
+                    </div>
 
                 </form>
 

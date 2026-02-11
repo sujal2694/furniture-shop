@@ -12,11 +12,11 @@
 }
 
 .login-form{
+    width: 25vw;
     background: #fff;
     padding: 30px;
     border: none;
     border-radius: 10px;
-    width: 25vw;
 }
 
 .form-head{
@@ -98,5 +98,11 @@ form .submit-btn:hover{
 @media (max-width: 900px){
     .login-form{
         width: 60vw;
+    }
+}
+
+@media (max-width: 650px) {
+    .login-form{
+        width: 80vw;
     }
 }
