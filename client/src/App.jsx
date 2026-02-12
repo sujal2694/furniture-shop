@@ -7,6 +7,7 @@ import { Route, Routes } from 'react-router-dom'
 import Home from './Pages/Home/Home'
 import ProductPage from './Pages/ProductPage/ProductPage'
 import { Toaster } from 'react-hot-toast'
+import Cart from './Pages/Cart/Cart'
 
 const App = () => {
   const { loginPopUp } = useContext(StoreContext);
@@ -17,6 +18,7 @@ const App = () => {
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/products' element={<ProductPage />} />
+        <Route path='/cart' element={<Cart />} />
       </Routes>
       <Footer />
       <Toaster />

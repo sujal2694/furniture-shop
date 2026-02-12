@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import './Products.css'
-import { assets, products } from '../../assets/assets'
+import { products } from '../../assets/assets'
 
 const Products = () => {
     return (
@@ -68,7 +68,7 @@ const Products = () => {
                 })}
 
                 {products.refrigerator.map((item, index) => {
-                    if (index % 2 === 0) {
+                    if (index % 2 !== 0) {
                         return (
                             <div key={index} className='item-box'>
                                 <div className="item">

@@ -1,0 +1,105 @@
+.cart{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cart-products{
+    width: 60vw;
+}
+
+.cart-item-title{
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr 1fr 1fr 1fr;
+    background: #b6b6b62f;
+    border-top: 1px solid #a9a9a9a8;
+    border-bottom: 1px solid #a9a9a9a8;
+    padding: 10px;
+    color: #666;
+    font-weight: 600;
+    margin: 20px 0;
+}
+
+.cart-item-title p{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cart-products .cart-products-list .cart-item{
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr 1fr 1fr 1fr;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-size: 15px;
+    margin-bottom: 20px;
+}
+
+.cart-products-list .cart-item p{
+    display: flex;
+    align-items: start;
+    justify-content: center;
+}
+
+.cart-products-list .cart-item .cart-item-img{
+    width: 100%;
+}
+
+.cart-products-list .cart-item .cart-item-name{
+    height: 40px;
+    overflow: hidden;
+}
+
+.cart-products-list .cart-item .cart-item-increment{
+    font-size: 40px;
+    font-weight: 100;
+    display: grid;
+    place-items: center;
+}
+
+.cart-products-list .cart-item .cart-item-price-discount{
+    color: #fc3737;
+}
+
+.cart-products-list .cart-item .cart-item-remove .remove-btn{
+    width: 15px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 750px) {
+    .cart{
+        flex-direction: column;
+    }
+    .cart-products{
+        width: 85vw;
+    }
+}

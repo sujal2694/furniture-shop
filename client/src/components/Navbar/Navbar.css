@@ -121,13 +121,13 @@
     cursor: pointer;
 }
 
-.cart i{
+.cart i {
     font-size: 25px;
-    color:  #444444;
+    color: #444444;
     cursor: pointer;
 }
 
-.log-in-btn button{
+.log-in-btn button {
     padding: 8px 20px;
     font-size: 16px;
     background-color: #55aff8;
@@ -136,7 +136,7 @@
     border-radius: 4px;
 }
 
-.log-in-btn button:hover{
+.log-in-btn button:hover {
     background: transparent;
     outline: 2px solid #55aff8;
     color: black;
@@ -148,9 +148,15 @@
 }
 
 
-@media (max-width:800px) {
+@media (max-width:1200px) {
     .nav {
-        width: 100dvw;
+        width: 90vw;
+    }
+}
+
+@media (max-width:750px) {
+    .nav {
+        width: 100vw;
     }
 
     .nav .logo i {
@@ -199,11 +205,5 @@
         margin-bottom: 30px;
         padding: 20px;
         cursor: pointer;
-    }
-}
-
-@media (max-width:1200px) {
-    .nav {
-        width: 90vw;
     }
 }

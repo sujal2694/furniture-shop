@@ -26,8 +26,8 @@
 }
 
 .text-container h1 {
-    font-size: 40px;
-    width: 400px;
+    font-size: 80px;
+    width: 50%;
     font-weight: 600;
     font-family: "dm serif text", sans-serif;
     letter-spacing: 0.8px;
@@ -36,7 +36,7 @@
 
 .text-container p {
     font-size: 14px;
-    width: 350px;
+    width: 40%;
     margin: 20px 0;
     color: #515252;
 }
