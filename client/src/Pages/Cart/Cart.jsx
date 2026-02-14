@@ -22,7 +22,9 @@ const Cart = () => {
                 <p className="cart-item-name">{item.title}</p>
                 <p className="cart-item-price">₹{item.price}</p>
                 <p className="cart-item-price-discount">-{item.discount}%</p>
-                <p className="cart-item-increment">+</p>
+                <p className="cart-item-increment">
+                  <img className='add-icon' src={assets.add_icon} alt="" />
+                </p>
                 <p className="cart-item-remove">
                   <img src={assets.cross_icon} alt="" className="remove-btn" />
                 </p>
@@ -32,23 +34,35 @@ const Cart = () => {
         </div>
       </div>
 
-      <div className="cart-total">
-        <h1>Cart Total</h1>
-        <ul className="cart-bill">
-          <li className='cart-total-price'>
-            <p>Cart Total:</p>
-            <span>4550</span>
-          </li>
-          <li className='cart-toal-discount'>
-            <p>Discounts:</p>
-            <span>30</span>
-          </li>
-          <li className='cart-toal'>
-            <p>Total:</p>
-            <span>3185</span>
-          </li>
-        </ul>
+      <div>
+        <div className="cart-total">
+          <h1>Cart Total</h1>
+          <ul className="cart-bill">
+            <li className='cart-total-price'>
+              <p>Cart Total:</p>
+              <span>₹4550</span>
+            </li>
+            <li className='cart-total-discount'>
+              <p>Discounts:</p>
+              <span>-30%</span>
+            </li>
+            <hr className='section' />
+            <li className='cart-total-bill'>
+              <p>Total:</p>
+              <span>₹3185</span>
+            </li>
+          </ul>
+        </div>
+
+        <div className='cart-discount-cuopon'>
+          <h1 className='cart-discount-cuopon-head'>Enter Redeem Code here</h1>
+          <div className='cart-discount-input'>
+            <input type="text" placeholder='Redeem code' required />
+            <button>Redeem</button>
+          </div>
+        </div>
       </div>
+
     </div>
   )
 }

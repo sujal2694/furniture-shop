@@ -36,7 +36,7 @@ const Navbar = () => {
                         <img src={assets.search_icon} alt="" />
                     </div>
                     <div onClick={()=>navigate('/cart')} className='cart'>
-                        <i className='bx bx-cart'></i>
+                        <img src={assets.cart_icon} alt="" />
                     </div>
                     {!token
                         ? <div className='log-in-btn'>

@@ -116,14 +116,9 @@
 }
 
 .search img,
-.user img {
+.user img,
+.cart img {
     width: 20px;
-    cursor: pointer;
-}
-
-.cart i {
-    font-size: 25px;
-    color: #444444;
     cursor: pointer;
 }
 

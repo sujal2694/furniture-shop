@@ -1,7 +1,9 @@
 .cart{
+    width: 85vw;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items: start;
+    justify-content: space-between;
+    margin: auto;
 }
 
 .cart-products{
@@ -52,10 +54,12 @@
 }
 
 .cart-products-list .cart-item .cart-item-increment{
-    font-size: 40px;
-    font-weight: 100;
     display: grid;
     place-items: center;
+}
+
+.cart-products-list .cart-item .cart-item-increment .add-icon{
+    width: 15px;
 }
 
 .cart-products-list .cart-item .cart-item-price-discount{
@@ -67,6 +71,53 @@
 }
 
 
+.cart-total{
+    max-width: 600px;
+    min-width: 400px;
+    padding: 10px 30px;
+    box-shadow: 0 0 10px 2px #00000010;
+    border-radius: 10px;
+    margin-top: 100px;
+}
+
+.cart-total h1{
+    font-size: 30px;
+    font-weight: 600;
+    font-family: "DM Serif Text", sans-serif;
+}
+
+.cart-total .cart-bill{
+    list-style: none;
+    padding: 10px;
+    line-height: 30px;
+}
+
+.cart-total .cart-bill .cart-total-price,
+.cart-total-discount,
+.cart-total-bill{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.cart-total .cart-bill .cart-total-price p,
+.cart-total-discount p,
+.cart-total-bill p{
+    font-weight: 600;
+    font-size: 17px;
+}
+
+.cart-total .cart-bill .cart-total-discount span{
+    color: #f33d3d;
+}
+
+.cart-total .section{
+    height: 1px;
+    border: none;
+    border-radius: 50px;
+    background: #000;
+    margin: 10px 0;
+}
 
 
 
@@ -90,10 +141,16 @@
 
 
 
+@media (max-width: 1200px) {
+    .cart{
+        flex-direction: column;
+        gap: 5rem;
+    }
 
-
-
-
+    .cart-products{
+        width: 80vw;
+    }
+}
 
 @media (max-width: 750px) {
     .cart{

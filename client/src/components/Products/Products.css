@@ -96,10 +96,9 @@
     letter-spacing: 0.4px;
 }
 
-
-@media (max-width: 550px) {
+@media (max-width: 1200px) {
     .products-list{
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
     }
 }
 

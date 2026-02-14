@@ -95,6 +95,12 @@ form .submit-btn:hover{
     cursor: pointer;
 }
 
+@media (max-width:1200px) {
+    .login-form{
+        width: 50vw;
+    }
+}
+
 @media (max-width: 900px){
     .login-form{
         width: 60vw;
