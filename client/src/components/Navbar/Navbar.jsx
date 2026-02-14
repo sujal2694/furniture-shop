@@ -1,8 +1,8 @@
 import React, { useContext } from 'react'
 import { StoreContext } from '../../context/Context'
-import './Navbar.css'
 import { useNavigate } from 'react-router-dom'
 import { assets } from '../../assets/assets'
+import './Navbar.css'
 
 const Navbar = () => {
     const { menu, setMenu, slider, setSlider, setLoginPopUp, token, setToken } = useContext(StoreContext);
