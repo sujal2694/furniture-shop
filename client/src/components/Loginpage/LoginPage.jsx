@@ -1,12 +1,12 @@
 import React, { useContext } from 'react'
 import './LoginPage.css'
-import { StoreContext } from '../../context/Context'
+import { StoreContext } from '../../context/StoreContext' 
 import { assets } from '../../assets/assets';
 import axios from 'axios'
 import toast from 'react-hot-toast';
 
 const LoginPage = () => {
-    const { currState, setCurrState, setLoginPopUp, url, setUserData, userData, setToken, token } = useContext(StoreContext);
+    const { currState, setCurrState, setLoginPopUp, url, setUserData, userData, setToken } = useContext(StoreContext);
 
     const onChangeHandler = (event) => {
         const name = event.target.name;

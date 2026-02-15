@@ -1,0 +1,167 @@
+.navbar {
+    width: 100%;
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    background: white;
+}
+
+.navbar .nav {
+    width: 85vw;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: auto;
+    padding-right: 100px;
+    padding-left: 30px;
+}
+
+.nav .nav-list {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+}
+
+.nav .nav-list .nav-list-item {
+    font-weight: 500;
+    font-size: 16px;
+    padding: 8px 20px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.nav .nav-list .nav-list-item:hover {
+    padding: 8px 20px;
+    background: #03030313;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+}
+
+.nav .nav-list #menu {
+    padding: 8px 20px;
+    background: #55aff8;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    color: white;
+}
+
+
+#hidden{
+    display: none;
+}
+
+.nav .nav-right {
+    width: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.nav .nav-right .search img,
+.cart img,
+.user img {
+    width: 25px;
+    transition: all 0.3s;
+}
+
+.nav .nav-right .search img:hover,
+.cart img:hover {
+    scale: 1.1;
+    cursor: pointer;
+}
+
+.log-in-btn button {
+    width: 100px;
+    padding: 12px 20px;
+    background: #55aff8;
+    border: none;
+    outline: none;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.log-in-btn button:hover {
+    background: white;
+    color: black;
+    outline: 2px solid #55aff8;
+}
+
+.navbar .hr {
+    height: 1px;
+    width: 100vw;
+    border: none;
+    outline: none;
+    background: #3b3b3b;
+    border-radius: 50px;
+    margin-bottom: 30px;
+}
+
+.close{
+    display: none;
+}
+
+@media (max-width: 900px) {
+    .nav {
+        width: 90vw;
+    }
+
+    #links {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1001;
+        background: white;
+        height: 100dvh;
+        width: 250px;
+        padding: 30px 0;
+        box-shadow: 0 0 10px 2px #00000027;
+    }
+
+    #links .close{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: end;
+        margin: 10px 0;
+        padding: 8px 20px;
+    }
+
+    #links .close img{
+        width: 20px;
+    }
+
+    #links .nav-list {
+        display: flex;
+        align-items: start;
+        justify-content: start;
+        flex-direction: column;
+        gap: 0;
+    }
+
+    #links .nav-list .nav-list-item {
+        border-radius: 0;
+        width: 100%;
+        padding: 20px 30px;
+    }
+
+    #links .nav-list #menu {
+        padding: 20px 30px;
+        border-radius: 0px;
+    }
+
+    #links .nav-list .nav-list-item:hover {
+    padding: 20px 30px;
+    background: #03030313;
+    border-radius: 0px;
+}
+}

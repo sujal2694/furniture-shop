@@ -15,26 +15,20 @@ const Cart = () => {
             <p>Add</p>
             <p>Remove</p>
           </div>
-          {products.sofa.map((item, index) => {
-            return (
-              <div key={index} className="cart-item">
-                <img src={item.image} alt="" className="cart-item-img" />
-                <p className="cart-item-name">{item.title}</p>
-                <p className="cart-item-price">₹{item.price}</p>
-                <p className="cart-item-price-discount">-{item.discount}%</p>
-                <p className="cart-item-increment">
-                  <img className='add-icon' src={assets.add_icon} alt="" />
-                </p>
-                <p className="cart-item-remove">
-                  <img src={assets.cross_icon} alt="" className="remove-btn" />
-                </p>
-              </div>
-            )
-          })}
+          
         </div>
       </div>
 
       <div>
+
+        <div className='cart-discount-cuopon'>
+          <h1 className='cart-discount-cuopon-head'>Enter Redeem Code here</h1>
+          <div className='cart-discount-input'>
+            <input type="text" placeholder='Redeem code' required />
+            <button>Redeem</button>
+          </div>
+        </div>
+
         <div className="cart-total">
           <h1>Cart Total</h1>
           <ul className="cart-bill">
@@ -52,15 +46,11 @@ const Cart = () => {
               <span>₹3185</span>
             </li>
           </ul>
+
+          <button className='cart-rent-btn'>Rent Now</button>
         </div>
 
-        <div className='cart-discount-cuopon'>
-          <h1 className='cart-discount-cuopon-head'>Enter Redeem Code here</h1>
-          <div className='cart-discount-input'>
-            <input type="text" placeholder='Redeem code' required />
-            <button>Redeem</button>
-          </div>
-        </div>
+
       </div>
 
     </div>

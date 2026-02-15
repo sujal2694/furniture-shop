@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import { StoreContext } from '../../context/Context'
+import { StoreContext } from '../../context/StoreContext' 
 import { useNavigate } from 'react-router-dom'
 import { assets } from '../../assets/assets'
 import './Navbar.css'
@@ -20,9 +20,10 @@ const Navbar = () => {
                     <i onClick={() => setSlider(true)} className='bx bx-menu'></i>
                     <h1 onClick={() => navigate('/')}>Shop</h1>
                 </div>
+
                 <div id={slider ? "links" : "hidden"}>
                     <div onClick={() => setSlider(false)} className='close'>
-                        <i className='bx bx-x'></i>
+                        <img src={assets.cross_icon} alt="" />
                     </div>
                     <ul className="nav-list">
                         <li onClick={() => {setMenu("home"), navigate('/')}} className="nav-list-item" id={menu === "home" ? "menu" : ""}>Home</li>
@@ -31,6 +32,7 @@ const Navbar = () => {
                         <li onClick={() => {setMenu("contact"), navigate('/contact')}} className="nav-list-item" id={menu === "contact" ? "menu" : ""}>contact us</li>
                     </ul>
                 </div>
+
                 <div className="nav-right">
                     <div className='search'>
                         <img src={assets.search_icon} alt="" />
@@ -40,7 +42,7 @@ const Navbar = () => {
                     </div>
                     {!token
                         ? <div className='log-in-btn'>
-                            <button onClick={() => setLoginPopUp(true)}>SIgn Up</button>
+                            <button onClick={() => setLoginPopUp(true)}>Sign Up</button>
                         </div>
                         : ""
                     }
