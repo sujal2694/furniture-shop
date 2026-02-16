@@ -5,6 +5,9 @@ import profile_icon from './profile_icon.png'
 import search_icon from './search_icon.png'
 import cart_icon from './cart.png'
 import add_icon from './plus.png'
+import add_cart_icon from './add_icon_white.png'
+import add_icon_green from './add_icon_green.png'
+import remove_icon_red from './remove_icon_red.png'
 
 import sofa_img_1 from './sofa-img-1.webp'
 import sofa_img_2 from './sofa-img-2.webp'
@@ -45,6 +48,9 @@ export const assets = {
   cross_icon,
   cart_icon,
   add_icon,
+  add_cart_icon,
+  add_icon_green,
+  remove_icon_red,
 }
 
 export const products = {
