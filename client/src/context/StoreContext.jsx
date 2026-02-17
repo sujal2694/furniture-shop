@@ -11,6 +11,7 @@ export const StoreContextProvider = ({ children }) => {
   const [loginPopUp, setLoginPopUp] = useState(false);
   const [userData, setUserData] = useState({ name: '', email: '', password: '' });
   const [token, setToken] = useState(() => localStorage.getItem('token') || '');
+  const [cartItems, setCartItems] = useState();
 
   const contextValue = {
     menu,
