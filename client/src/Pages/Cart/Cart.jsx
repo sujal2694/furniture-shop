@@ -1,50 +1,59 @@
 import React, { useContext } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { assets, products } from '../../assets/assets'
 import './Cart.css'
 import { StoreContext } from '../../context/StoreContext'
 
 const Cart = () => {
-  const { cartItems } = useContext(StoreContext);
+  const { cartItems, getTotalcartAmt } = useContext(StoreContext);
+  const navigate = useNavigate();
+  const onSubmit = () => {
+    if (!(cartItems > 0)) {
+      alert("Your cart is empty.")
+    }
+  }
   return (
     <div className='cart'>
       <div className="cart-products">
-        <div className="cart-products-list">
-          <div className="cart-item-title">
-            <p>Image</p>
-            <p>Title</p>
-            <p>Price</p>
-            <p>Quantity</p>
-            <p>Discount</p>
-            <p>Add</p>
-            <p>Remove</p>
-          </div>
-
-          <div className="cart-products-list">
-            <div className="cart-item">
-              {Object.keys(cartItems).length > 0 ? (
-                Object.keys(cartItems).map((itemId) => {
-                  const qty = cartItems[itemId];
-                  let itemInfo = null;
-                  for (const catArr of Object.values(products)) {
-                    itemInfo = catArr.find((p) => p._id === Number(itemId));
-                    if (itemInfo) break;
-                  }
-                  return itemInfo ? (
-                    <div key={itemId} className="cart-item-row">
-                      <img className='cart-item-img' src={itemInfo.image} alt="" />
-                      <p>{itemInfo.title}</p>
-                      <span>₹{itemInfo.price}</span>
-                      <p className='cart-item-quantity'>{qty}</p>
-                    </div>
-                  ) : null;
-                })
-              ) : (
-                <p>Your cart is empty</p>
-              )}
+        {cartItems > 0
+          ? <div className="cart-products-list">
+            <div className="cart-item-title">
+              <p>Image</p>
+              <p>Title</p>
+              <p>Price</p>
+              <p>Quantity</p>
+              <p>Discount</p>
+              <p>Add</p>
+              <p>Remove</p>
             </div>
-          </div>
 
-        </div>
+            <div className="cart-products-list">
+              <div className="cart-item">
+                {Object.keys(cartItems).length > 0 ? (
+                  Object.keys(cartItems).map((itemId) => {
+                    const qty = cartItems[itemId];
+                    let itemInfo = null;
+                    for (const catArr of Object.values(products)) {
+                      itemInfo = catArr.find((p) => p._id === Number(itemId));
+                      if (itemInfo) break;
+                    }
+                    return itemInfo ? (
+                      <div key={itemId} className="cart-item-row">
+                        <img className='cart-item-img' src={itemInfo.image} alt="" />
+                        <p>{itemInfo.title}</p>
+                        <span>₹{itemInfo.price}</span>
+                        <p className='cart-item-quantity'>{qty}</p>
+                      </div>
+                    ) : null;
+                  })
+                ) : ""}
+              </div>
+            </div>
+
+          </div> : <div className='empty'>
+            <p>Your cart is empty</p>
+            <button onClick={() => navigate("/products")}>Rent Now</button>
+          </div>}
       </div>
 
       <div>
@@ -61,20 +70,20 @@ const Cart = () => {
           <ul className="cart-bill">
             <li className='cart-total-price'>
               <p>Cart Total:</p>
-              <span>₹4550</span>
+              <span>₹{getTotalcartAmt === 0 ? getTotalcartAmt : 0}</span>
             </li>
             <li className='cart-total-discount'>
               <p>Discounts:</p>
-              <span>-30%</span>
+              <span>0</span>
             </li>
             <hr className='section' />
             <li className='cart-total-bill'>
               <p>Total:</p>
-              <span>₹3185</span>
+              <span>₹{getTotalcartAmt === 0 ? getTotalcartAmt : 0}</span>
             </li>
           </ul>
 
-          <button className='cart-rent-btn'>Rent Now</button>
+          <button onClick={onSubmit} className='cart-rent-btn'>Rent Now</button>
         </div>
 
 

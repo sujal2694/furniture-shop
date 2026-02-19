@@ -12,7 +12,7 @@ export const StoreContextProvider = ({ children }) => {
   const [currState, setCurrState] = useState('sign up');
   const [loginPopUp, setLoginPopUp] = useState(false);
   const [userData, setUserData] = useState({ name: '', email: '', password: '' });
-  const [token, setToken] = useState(() => localStorage.getItem('token') || '');
+  const [token, setToken] = useState();
   const [cartItems, setCartItems] = useState({});
 
   const addTocart = async (itemid) => {
