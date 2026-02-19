@@ -56,6 +56,7 @@ export const assets = {
 export const products = {
   sofa: [
     {
+      _id:1,
       title: "Home Center Hellos Lewis Anne Brown Wooden Convertible Sofabed",
       image: sofa_img_1,
       price: 799,
@@ -75,6 +76,7 @@ export const products = {
       },
     },
     {
+      _id:2,
       title: "3 Seater Modular L Shape Sofa Set with Ottoman | Soft Velvet Suede Fabric | Modern Design",
       image: sofa_img_2,
       price: 1299,
@@ -95,6 +97,7 @@ export const products = {
       },
     },
     {
+      _id:3,
       title: "WESTIDO Orlando Leatherette 3 Seater Sofa | 1 year Warranty",
       image: sofa_img_3,
       price: 899,
@@ -114,6 +117,7 @@ export const products = {
       },
     },
     {
+      _id:4,
       title: "3 Seater Modular L Shape Sofa | Soft Velvet Suede Fabric",
       image: sofa_img_4,
       price: 1199,
@@ -133,6 +137,7 @@ export const products = {
       },
     },
     {
+      _id:5,
       title: "Duroflex Ease Plus - 2 Seater Sofa Set for living room | 3 year warranty",
       image: sofa_img_5,
       price: 949,
@@ -155,6 +160,7 @@ export const products = {
 
   ac: [
     {
+      _id:6,
       title: "Whirlpool 1.5 Ton 5 Star, Magicool Inverter Split AC (MAGICOOL 15T 5S INV CNV S5K2PP0, Copper, Convertible 4-in-1 Cooling Mode, HD Filter White)",
       image: ac_img_1,
       price: 2199,
@@ -174,6 +180,7 @@ export const products = {
       },
     },
     {
+      _id:7,
       title: "Godrej 1 Ton 5 Star, 5 Years Comprehensive Warranty, AI Powered, 5-in-1 Convertible Cooling, Self Clean, Inverter Split AC ...",
       image: ac_img_2,
       price: 1699,
@@ -183,6 +190,7 @@ export const products = {
       description: { /* unchanged */ },
     },
     {
+      _id:8,
       title: "Samsung 1.5 Ton 3 Star WiFi Enabled Bespoke AI WindFree Air Conditioner ...",
       image: ac_img_3,
       price: 2399,
@@ -192,6 +200,7 @@ export const products = {
       description: { /* unchanged */ },
     },
     {
+      _id:9,
       title: "Cruise 1.5 Ton 3 Star Inverter Split AC with 7-Stage Air Filtration ...",
       image: ac_img_4,
       price: 1899,
@@ -201,6 +210,7 @@ export const products = {
       description: { /* unchanged */ },
     },
     {
+      _id:10,
       title: "Voltas 1.5 Ton 3 Star Inverter Split AC (Copper, 4-in-1 Adjustable Mode ...) ...",
       image: ac_img_5,
       price: 1999,
@@ -213,6 +223,7 @@ export const products = {
 
   refrigerator: [
     {
+      _id:11,
       title: "Haier 185L 2 Star Direct Cool Single Door Refrigerator ...",
       image: refrigerator_img_1,
       price: 649,
@@ -222,6 +233,7 @@ export const products = {
       description: { /* unchanged */ },
     },
     {
+      _id:12,
       title: "LG Smart Choice, 446 L, 1 Star, Convertible ...",
       image: refrigerator_img_2,
       price: 1299,
@@ -231,6 +243,7 @@ export const products = {
       description: { /* unchanged */ },
     },
     {
+      _id:13,
       title: "Samsung 236 L, 3 Star, Convertible ...",
       image: refrigerator_img_3,
       price: 899,
@@ -240,6 +253,7 @@ export const products = {
       description: { /* unchanged */ },
     },
     {
+      _id:14,
       title: "Haier 240L 2 Star Frost Free Top Mount Double Door ...",
       image: refrigerator_img_4,
       price: 949,
@@ -249,6 +263,7 @@ export const products = {
       description: { /* unchanged */ },
     },
     {
+      _id:15,
       title: "Samsung 350 L, 3 Star, Convertible 5-in-1 ...",
       image: refrigerator_img_5,
       price: 1199,
@@ -261,6 +276,7 @@ export const products = {
 
   bed: [
     {
+      _id:16,
       title: "RATANDHARA FURNITURE Single Size Leopard Sheesham Wood Platform Bed Without Storage ...",
       image: bed_img_1,
       price: 749,
@@ -270,6 +286,7 @@ export const products = {
       description: { /* unchanged */ },
     },
     {
+      _id:17,
       title: "Acacia Solid Sheesham Wood Queen Size Bed ...",
       image: bed_img_2,
       price: 1199,
@@ -279,6 +296,7 @@ export const products = {
       description: { /* unchanged */ },
     },
     {
+      _id:18,
       title: "s k modern art Wrought Iron Storage Bed ...",
       image: bed_img_3,
       price: 1099,
@@ -288,6 +306,7 @@ export const products = {
       description: { /* unchanged */ },
     },
     {
+      _id:19,
       title: "Klenta Home Decor Modern Queen Size Upholstered Bed ...",
       image: bed_img_4,
       price: 999,
@@ -297,6 +316,7 @@ export const products = {
       description: { /* unchanged */ },
     },
     {
+      _id:20,
       title: "BedCult Furniture Solid Sheesham Wood Wooden Single Size Bed ...",
       image: bed_img_5,
       price: 799,
@@ -309,6 +329,7 @@ export const products = {
 
   microwave: [
     {
+      _id:21,
       title: "Panasonic 20L Solo Microwave Oven ...",
       image: microwave_img_1,
       price: 449,
@@ -318,6 +339,7 @@ export const products = {
       description: { /* unchanged */ },
     },
     {
+      _id:22,
       title: "Panasonic 27L Convection Microwave Oven ...",
       image: microwave_img_2,
       price: 649,
@@ -327,6 +349,7 @@ export const products = {
       description: { /* unchanged */ },
     },
     {
+      _id:23,
       title: "LG 28 L Convection Microwave Oven ...",
       image: microwave_img_3,
       price: 749,
@@ -336,6 +359,7 @@ export const products = {
       description: { /* unchanged */ },
     },
     {
+      _id:24,
       title: "Samsung 28 L Convection Microwave Oven ...",
       image: microwave_img_4,
       price: 699,
@@ -345,6 +369,7 @@ export const products = {
       description: { /* unchanged */ },
     },
     {
+      _id:25,
       title: "IFB 30L Convection Microwave Oven ...",
       image: microwave_img_5,
       price: 729,
@@ -357,6 +382,7 @@ export const products = {
 
   center_table: [
     {
+      _id:26,
       title: "CREATIVE SKILLS Coffee Table 2 Tier ...",
       image: table_img_1,
       price: 299,
@@ -366,6 +392,7 @@ export const products = {
       description: { /* unchanged */ },
     },
     {
+      _id:27,
       title: "Lukzer Engineered Wood Center Table with Wheels ...",
       image: table_img_2,
       price: 249,
@@ -375,6 +402,7 @@ export const products = {
       description: { /* unchanged */ },
     },
     {
+      _id:28,
       title: "THE KASHTH Retro Shape Brown Coffee Table ...",
       image: table_img_3,
       price: 349,
@@ -384,6 +412,7 @@ export const products = {
       description: { /* unchanged */ },
     },
     {
+      _id:29,
       title: "Home Centre Clary Coffee Table – White ...",
       image: table_img_4,
       price: 279,
@@ -393,6 +422,7 @@ export const products = {
       description: { /* unchanged */ },
     },
     {
+      _id:30,
       title: "ARTILUXE Orchid Marble Round Nesting Center Table ...",
       image: table_img_5,
       price: 599,

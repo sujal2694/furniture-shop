@@ -122,12 +122,17 @@
 }
 
 @media (max-width: 900px) {
-    .nav {
-        width: 90vw;
+    .navbar .nav {
+        width: 100vw;
+        padding-left: 20px;
     }
 
     .nav .logo i {
         display: block;
+    }
+
+    .nav .nav-list{
+        display: none;
     }
 
     #links {

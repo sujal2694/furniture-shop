@@ -3,7 +3,7 @@
     margin: auto;
 }
 
-.product-page .product-page-title h1{
+.product-page .product-page-title h1 {
     text-align: center;
     font-size: 50px;
     font-family: "DM Serif Text", sans-serif;
@@ -12,7 +12,7 @@
     margin-top: 30px;
 }
 
-.product-page .product-page-title h1 span{
+.product-page .product-page-title h1 span {
     color: #55aff8;
     letter-spacing: 0.7px;
 }
@@ -49,7 +49,7 @@
 .item:nth-child(12) .item-img,
 .item:nth-child(13) .item-img,
 .item:nth-child(14) .item-img,
-.item:nth-child(15) .item-img{
+.item:nth-child(15) .item-img {
     object-fit: contain;
 }
 
@@ -59,20 +59,167 @@
     right: 10px;
 }
 
-.products .item .add-icon img{
+.products .item .add-icon img {
     width: 40px;
 }
 
-.products .item .add-icon .add-remove-btn {
+/* Add to Cart Button */
+.products .item .add-icon .add-to-cart-btn {
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 50%;
     display: flex;
     align-items: center;
-    flex-direction: row-reverse;
+    justify-content: center;
 }
 
-#addTocarthidden{
+.products .item .add-icon .add-to-cart-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 12px rgba(85, 175, 248, 0.3);
+}
+
+.products .item .add-icon .add-to-cart-btn:active {
+    transform: scale(0.95);
+}
+
+/* Add/Remove Button Container */
+.products .item .add-icon .add-remove-btn {
+    background-color: #fff;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 5px 10px;
+    animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Increment Button */
+.products .item .add-icon .add-remove-btn .increment {
+    width: 30px !important;
+    height: 30px !important;
+    flex-shrink: 0;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    background-color: transparent;
+    border-radius: 50%;
+    border: none;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.products .item .add-icon .add-remove-btn .increment:hover {
+    transform: scale(1.15);
+}
+
+.products .item .add-icon .add-remove-btn .increment:active {
+    transform: scale(0.9);
+}
+
+/* Decrement Button */
+.products .item .add-icon .add-remove-btn .decrement {
+    width: 30px !important;
+    height: 30px !important;
+    flex-shrink: 0;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    background-color: transparent;
+    border-radius: 50%;
+    border: none;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.products .item .add-icon .add-remove-btn .decrement:hover {
+    transform: scale(1.15);
+}
+
+.products .item .add-icon .add-remove-btn .decrement:active {
+    transform: scale(0.9);
+}
+
+/* Quantity Display */
+.products .item .add-icon .add-remove-btn p {
+    margin: 0;
+    font-weight: 600;
+    font-size: 14px;
+    color: #333;
+    min-width: 20px;
+    text-align: center;
+    animation: popIn 0.3s ease;
+}
+
+@keyframes popIn {
+    0% {
+        transform: scale(0);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+#addTocarthidden {
     display: none;
 }
 
-#hidden{
-    display: none;
+#hidden {
+    display: block;
+}
+
+@media (max-width:750px) {
+    .product-page {
+        width: 100vw;
+        padding: 20px;
+    }
+
+    .product-page .product-page-title h1{
+        margin-top: 10px;
+        margin-bottom: -40px;
+    }
+
+    .products {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .products .item{
+        max-height: 300px;
+    }
+
+    .products .item .item-name{
+        font-size: 13px;
+        font-weight: 400;
+        color: #444;
+        overflow: hidden;
+    }
+
+    .products .item .item-price{
+        margin-top: 5px;
+        font-size: 17px;
+        font-weight: 400;
+        letter-spacing: 0.8px;
+    }
+
 }

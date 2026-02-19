@@ -1,8 +1,10 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { assets, products } from '../../assets/assets'
 import './Cart.css'
+import { StoreContext } from '../../context/StoreContext'
 
 const Cart = () => {
+  const { cartItems } = useContext(StoreContext);
   return (
     <div className='cart'>
       <div className="cart-products">
@@ -11,16 +13,41 @@ const Cart = () => {
             <p>Image</p>
             <p>Title</p>
             <p>Price</p>
+            <p>Quantity</p>
             <p>Discount</p>
             <p>Add</p>
             <p>Remove</p>
           </div>
-          
+
+          <div className="cart-products-list">
+            <div className="cart-item">
+              {Object.keys(cartItems).length > 0 ? (
+                Object.keys(cartItems).map((itemId) => {
+                  const qty = cartItems[itemId];
+                  let itemInfo = null;
+                  for (const catArr of Object.values(products)) {
+                    itemInfo = catArr.find((p) => p._id === Number(itemId));
+                    if (itemInfo) break;
+                  }
+                  return itemInfo ? (
+                    <div key={itemId} className="cart-item-row">
+                      <img className='cart-item-img' src={itemInfo.image} alt="" />
+                      <p>{itemInfo.title}</p>
+                      <span>₹{itemInfo.price}</span>
+                      <p className='cart-item-quantity'>{qty}</p>
+                    </div>
+                  ) : null;
+                })
+              ) : (
+                <p>Your cart is empty</p>
+              )}
+            </div>
+          </div>
+
         </div>
       </div>
 
       <div>
-
         <div className='cart-discount-cuopon'>
           <h1 className='cart-discount-cuopon-head'>Enter Redeem Code here</h1>
           <div className='cart-discount-input'>

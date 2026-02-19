@@ -1,8 +1,10 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import './ProductPage.css'
 import { assets, products } from '../../assets/assets'
+import { StoreContext } from '../../context/StoreContext'
 
 const ProductPage = () => {
+  const { addTocart, removeFromcart, cartItems } = useContext(StoreContext);
   return (
     <div className='product-page'>
       <div className="product-page-title">
@@ -13,14 +15,16 @@ const ProductPage = () => {
           return (
             <div className='item' key={index}>
               <img className='item-img' src={item.image} alt="" />
-              <h3>{item.title}</h3>
-              <h4>₹{item.price}</h4>
+              <h3 className='item-name'>{item.title}</h3>
+              <h4 className='item-price'>₹{item.price}</h4>
               <div className="add-icon">
-                <img className='add-to-cart-btn' src={assets.add_cart_icon} alt="" />
-                <div className='add-remove-btn' id='hidden'>
-                  <img className='increment' src={assets.add_icon_green} alt="" />
-                  <img className='decrement' src={assets.remove_icon_red} alt="" />
-                </div>
+                {!cartItems[item._id]
+                  ? (<img onClick={() => addTocart(item._id)} className='add-to-cart-btn' src={assets.add_cart_icon} alt="" />)
+                  : (<div className='add-remove-btn' id='hidden'>
+                    <img onClick={() => addTocart(item._id)} className='increment' src={assets.add_icon_green} alt="" />
+                    <p>{cartItems[item._id]}</p>
+                    <img onClick={() => removeFromcart(item._id)} className='decrement' src={assets.remove_icon_red} alt="" />
+                  </div>)}
               </div>
             </div>
           )
@@ -30,14 +34,16 @@ const ProductPage = () => {
           return (
             <div className='item' key={index}>
               <img className='item-img' src={item.image} alt="" />
-              <h3>{item.title}</h3>
-              <h4>₹{item.price}</h4>
+              <h3 className='item-name'>{item.title}</h3>
+              <h4 className='item-price'>₹{item.price}</h4>
               <div className="add-icon">
-                <img className='add-to-cart-btn' src={assets.add_cart_icon} alt="" />
-                <div className='add-remove-btn' id='hidden'>
-                  <img className='increment' src={assets.add_icon_green} alt="" />
-                  <img className='decrement' src={assets.remove_icon_red} alt="" />
-                </div>
+                {!cartItems[item._id]
+                  ? (<img onClick={() => addTocart(item._id)} className='add-to-cart-btn' src={assets.add_cart_icon} alt="" />)
+                  : (<div className='add-remove-btn' id='hidden'>
+                    <img onClick={() => addTocart(item._id)} className='increment' src={assets.add_icon_green} alt="" />
+                    <p>{cartItems[item._id]}</p>
+                    <img onClick={() => removeFromcart(item._id)} className='decrement' src={assets.remove_icon_red} alt="" />
+                  </div>)}
               </div>
             </div>
           )
@@ -47,14 +53,16 @@ const ProductPage = () => {
           return (
             <div className='item' key={index}>
               <img className='item-img' src={item.image} alt="" />
-              <h3>{item.title}</h3>
-              <h4>₹{item.price}</h4>
+              <h3 className='item-name'>{item.title}</h3>
+              <h4 className='item-price'>₹{item.price}</h4>
               <div className="add-icon">
-                <img className='add-to-cart-btn' src={assets.add_cart_icon} alt="" />
-                <div className='add-remove-btn' id='hidden'>
-                  <img className='increment' src={assets.add_icon_green} alt="" />
-                  <img className='decrement' src={assets.remove_icon_red} alt="" />
-                </div>
+                {!cartItems[item._id]
+                  ? (<img onClick={() => addTocart(item._id)} className='add-to-cart-btn' src={assets.add_cart_icon} alt="" />)
+                  : (<div className='add-remove-btn' id='hidden'>
+                    <img onClick={() => addTocart(item._id)} className='increment' src={assets.add_icon_green} alt="" />
+                    <p>{cartItems[item._id]}</p>
+                    <img onClick={() => removeFromcart(item._id)} className='decrement' src={assets.remove_icon_red} alt="" />
+                  </div>)}
               </div>
             </div>
           )
@@ -64,14 +72,16 @@ const ProductPage = () => {
           return (
             <div className='item' key={index}>
               <img className='item-img' src={item.image} alt="" />
-              <h3>{item.title}</h3>
-              <h4>₹{item.price}</h4>
+              <h3 className='item-name'>{item.title}</h3>
+              <h4 className='item-price'>₹{item.price}</h4>
               <div className="add-icon">
-                <img className='add-to-cart-btn' src={assets.add_cart_icon} alt="" />
-                <div className='add-remove-btn' id='hidden'>
-                  <img className='increment' src={assets.add_icon_green} alt="" />
-                  <img className='decrement' src={assets.remove_icon_red} alt="" />
-                </div>
+                {!cartItems[item._id]
+                  ? (<img onClick={() => addTocart(item._id)} className='add-to-cart-btn' src={assets.add_cart_icon} alt="" />)
+                  : (<div className='add-remove-btn' id='hidden'>
+                    <img onClick={() => addTocart(item._id)} className='increment' src={assets.add_icon_green} alt="" />
+                    <p>{cartItems[item._id]}</p>
+                    <img onClick={() => removeFromcart(item._id)} className='decrement' src={assets.remove_icon_red} alt="" />
+                  </div>)}
               </div>
             </div>
           )
@@ -81,14 +91,16 @@ const ProductPage = () => {
           return (
             <div className='item' key={index}>
               <img className='item-img' src={item.image} alt="" />
-              <h3>{item.title}</h3>
-              <h4>₹{item.price}</h4>
+              <h3 className='item-name'>{item.title}</h3>
+              <h4 className='item-price'>₹{item.price}</h4>
               <div className="add-icon">
-                <img className='add-to-cart-btn' src={assets.add_cart_icon} alt="" />
-                <div className='add-remove-btn' id='hidden'>
-                  <img className='increment' src={assets.add_icon_green} alt="" />
-                  <img className='decrement' src={assets.remove_icon_red} alt="" />
-                </div>
+                {!cartItems[item._id]
+                  ? (<img onClick={() => addTocart(item._id)} className='add-to-cart-btn' src={assets.add_cart_icon} alt="" />)
+                  : (<div className='add-remove-btn' id='hidden'>
+                    <img onClick={() => addTocart(item._id)} className='increment' src={assets.add_icon_green} alt="" />
+                    <p>{cartItems[item._id]}</p>
+                    <img onClick={() => removeFromcart(item._id)} className='decrement' src={assets.remove_icon_red} alt="" />
+                  </div>)}
               </div>
             </div>
           )
@@ -98,14 +110,16 @@ const ProductPage = () => {
           return (
             <div className='item' key={index}>
               <img className='item-img' src={item.image} alt="" />
-              <h3>{item.title}</h3>
-              <h4>₹{item.price}</h4>
+              <h3 className='item-name'>{item.title}</h3>
+              <h4 className='item-price'>₹{item.price}</h4>
               <div className="add-icon">
-                <img className='add-to-cart-btn' src={assets.add_cart_icon} alt="" />
-                <div className='add-remove-btn' id='hidden'>
-                  <img className='increment' src={assets.add_icon_green} alt="" />
-                  <img className='decrement' src={assets.remove_icon_red} alt="" />
-                </div>
+                {!cartItems[item._id]
+                  ? (<img onClick={() => addTocart(item._id)} className='add-to-cart-btn' src={assets.add_cart_icon} alt="" />)
+                  : (<div className='add-remove-btn' id='hidden'>
+                    <img onClick={() => addTocart(item._id)} className='increment' src={assets.add_icon_green} alt="" />
+                    <p>{cartItems[item._id]}</p>
+                    <img onClick={() => removeFromcart(item._id)} className='decrement' src={assets.remove_icon_red} alt="" />
+                  </div>)}
               </div>
             </div>
           )
