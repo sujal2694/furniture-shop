@@ -1,22 +1,26 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { assets, products } from '../../assets/assets'
 import './Cart.css'
 import { StoreContext } from '../../context/StoreContext'
 
 const Cart = () => {
-  const { cartItems, getTotalcartAmt } = useContext(StoreContext);
+  const { cartItems, getTotalcartAmt, addTocart, removeFromcart } = useContext(StoreContext);
   const navigate = useNavigate();
   const onSubmit = () => {
-    if (!(cartItems > 0)) {
-      alert("Your cart is empty.")
+    if (Object.keys(cartItems).length === 0) {
+      alert("Your cart is empty.");
     }
   }
+  useEffect(() => {
+    console.log(cartItems);
+
+  }, [])
   return (
     <div className='cart'>
       <div className="cart-products">
-        {cartItems > 0
-          ? <div className="cart-products-list">
+        {Object.keys(cartItems).length > 0
+          ? <div>
             <div className="cart-item-title">
               <p>Image</p>
               <p>Title</p>
@@ -43,6 +47,9 @@ const Cart = () => {
                         <p>{itemInfo.title}</p>
                         <span>₹{itemInfo.price}</span>
                         <p className='cart-item-quantity'>{qty}</p>
+                        <p className='cart-item-discount'>-{ }%</p>
+                        <img onClick={() => addTocart(Number(itemId))} src={assets.add_icon_green} className='add-btn' alt="" />
+                        <img onClick={() => removeFromcart(Number(itemId))} src={assets.remove_icon_red} className='remove-btn' alt="" />
                       </div>
                     ) : null;
                   })
@@ -70,7 +77,7 @@ const Cart = () => {
           <ul className="cart-bill">
             <li className='cart-total-price'>
               <p>Cart Total:</p>
-              <span>₹{getTotalcartAmt === 0 ? getTotalcartAmt : 0}</span>
+              <span>₹{getTotalcartAmt()}</span>
             </li>
             <li className='cart-total-discount'>
               <p>Discounts:</p>
@@ -79,7 +86,7 @@ const Cart = () => {
             <hr className='section' />
             <li className='cart-total-bill'>
               <p>Total:</p>
-              <span>₹{getTotalcartAmt === 0 ? getTotalcartAmt : 0}</span>
+              <span>₹{getTotalcartAmt()}</span>
             </li>
           </ul>
 

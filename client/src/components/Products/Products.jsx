@@ -1,8 +1,10 @@
-import React from 'react' 
+import React, { useContext } from 'react' 
 import './Products.css'
-import { products } from '../../assets/assets'
+import { products, assets } from '../../assets/assets'
+import { StoreContext } from '../../context/StoreContext'
 
 const Products = () => {
+    const { addTocart, removeFromcart, cartItems } = useContext(StoreContext);
     return (
         <div className='products-container'>
             <div className='head-pro'>
