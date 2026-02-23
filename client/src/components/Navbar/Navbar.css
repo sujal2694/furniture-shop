@@ -6,7 +6,7 @@
     z-index: 1000;
     background: white;
 }
-
+  
 .navbar .nav {
     width: 85vw;
     height: 80px;
@@ -84,8 +84,17 @@
     transition: all 0.3s;
 }
 
+.user{
+    position: relative;
+}
+
+.user:hover .sign-in-opt .opt-list{
+    display: block;
+}
+
 .nav .nav-right .search img:hover,
-.cart img:hover {
+.cart img:hover,
+.user img:hover {
     scale: 1.1;
     cursor: pointer;
 }
@@ -115,6 +124,36 @@
     background: #3b3b3b;
     border-radius: 50px;
     margin-bottom: 30px;
+}
+
+.sign-in-opt .opt-list{
+    width: 150px;
+    position: absolute;
+    top: 100%;
+    right: -10%;
+    background: #fff;
+    box-shadow: 0 0 10px 2px #0f0f0f1a;
+    border: none;
+    border-radius: 10px;
+    list-style: none;
+    display: none;
+    transition: all 0.3s ease-in;
+}
+
+.sign-in-opt .opt-list .opts{
+    padding: 10px 30px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.sign-in-opt .opt-list .opts i{
+    font-size: 19px;
 }
 
 .close {

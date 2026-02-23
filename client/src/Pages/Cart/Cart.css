@@ -92,6 +92,10 @@
     overflow: hidden;
 }
 
+.cart-products .cart-item-row span{
+    text-align: center;
+}
+
 .cart-products-list .cart-item .cart-item-img{
     width: 100%;
 }

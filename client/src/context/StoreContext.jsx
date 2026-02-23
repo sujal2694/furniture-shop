@@ -63,7 +63,8 @@ export const StoreContextProvider = ({ children }) => {
   const cartData = async (authToken) => {
     try {
       const response = await axios.post(url + "/api/cart/get", {}, { headers: { token: authToken } });
-      setCartItems(response.data.cartData || {});
+      setCartItems(response.data.cartData);
+      console.log(response.data);
     } catch (err) {
       // ignore for now
     }
