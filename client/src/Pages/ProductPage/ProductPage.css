@@ -189,6 +189,12 @@
     display: block;
 }
 
+@media (max-width: 1200px){
+    .products{
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
 @media (max-width:750px) {
     .product-page {
         width: 100vw;

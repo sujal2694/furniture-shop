@@ -160,6 +160,16 @@
     display: none;
 }
 
+@media (max-width: 1200px) {
+    .navbar .nav{
+        width: 95vw;
+    }
+
+    .nav .nav-list .nav-list-item{
+        font-size: 14px;
+    }
+}
+
 @media (max-width: 900px) {
     .navbar .nav {
         width: 100vw;
