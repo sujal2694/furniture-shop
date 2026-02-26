@@ -2,6 +2,7 @@ import React from 'react'
 import { assests } from '../assets/assets'
 import { useState } from 'react'
 import toast from 'react-hot-toast';
+import axios from 'axios'
 
 const AddItem = ({ url }) => {
   const [image, setImage] = useState(false);
@@ -48,9 +49,9 @@ const AddItem = ({ url }) => {
           <div>
             <p className='text-[15px] font-semibold pl-1.5 mb-2'>Upload Image</p>
             <label htmlFor="image">
-              <img src={image ? URL.createObjectURL(image) : assests.upload_img} alt="" />
+              <img className='cursor-pointer' src={image ? URL.createObjectURL(image) : assests.upload_img} alt="" />
             </label>
-            <input onChange={(e) => setImage(e.target.files[0])} type="image" id='image' className='hidden' />
+            <input onChange={(e) => setImage(e.target.files[0])} type="file" id='image' className='cursor-pointer hidden' />
           </div>
           <div>
             <p className='text-[15px] font-semibold pl-1.5 mb-2'>Product Name</p>
@@ -68,7 +69,7 @@ const AddItem = ({ url }) => {
             <p className='text-[15px] font-semibold pl-1.5 mb-2'>Category</p>
             <select onChange={onChangeHandler} value={data.category} name='category' className='border border-gray-600/40 rounded-[10px] h-10 w-40 pl-2.5'>
               <option value="select">select</option>
-              <option value="sofa">Sofa</option>
+              <option value="sofa">Sofa</option>  
               <option value="refrigerator">Refrigerator</option>
               <option value="microwave">Microwave</option>
               <option value="ac">AC</option>
