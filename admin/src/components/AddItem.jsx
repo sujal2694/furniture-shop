@@ -10,7 +10,7 @@ const AddItem = ({ url }) => {
     name: "",
     description: "",
     price: "",
-    category: "SELECT",
+    category: "",
   });
 
   const onChangeHandler = (e) => {
@@ -33,7 +33,7 @@ const AddItem = ({ url }) => {
         name: "",
         description: "",
         price: "",
-        category: "SELECT"
+        category: "",
       })
       setImage(false);
       toast.success(response.data.message);
@@ -49,7 +49,7 @@ const AddItem = ({ url }) => {
           <div>
             <p className='text-[15px] font-semibold pl-1.5 mb-2'>Upload Image</p>
             <label htmlFor="image">
-              <img className='cursor-pointer' src={image ? URL.createObjectURL(image) : assests.upload_img} alt="" />
+              <img className='cursor-pointer w-36' src={image ? URL.createObjectURL(image) : assests.upload_img} alt="" />
             </label>
             <input onChange={(e) => setImage(e.target.files[0])} type="file" id='image' className='cursor-pointer hidden' />
           </div>
@@ -67,13 +67,7 @@ const AddItem = ({ url }) => {
           </div>
           <div>
             <p className='text-[15px] font-semibold pl-1.5 mb-2'>Category</p>
-            <select onChange={onChangeHandler} value={data.category} name='category' className='border border-gray-600/40 rounded-[10px] h-10 w-40 pl-2.5'>
-              <option value="select">select</option>
-              <option value="sofa">Sofa</option>  
-              <option value="refrigerator">Refrigerator</option>
-              <option value="microwave">Microwave</option>
-              <option value="ac">AC</option>
-            </select>
+            <input onChange={onChangeHandler} name='category' value={data.category} type="text" placeholder='Type here..' className='border border-gray-600/40 rounded-[10px] h-10 w-2xs pl-2.5' />
           </div>
           <div>
             <button type='submit' className='w-32 bg-gray-900 text-white rounded-[10px] py-2 border-none'>Add</button>
