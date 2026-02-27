@@ -8,6 +8,7 @@ export const addProduct = async (req,res) => {
     const product = new prodcutsModel({
         name:req.body.name,
         description:req.body.description,
+        discount:req.body.discount,
         price:req.body.price,
         category:req.body.category,
         image:image_filename,

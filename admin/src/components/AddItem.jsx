@@ -9,6 +9,7 @@ const AddItem = ({ url }) => {
   const [data, setData] = useState({
     name: "",
     description: "",
+    discount:"",
     price: "",
     category: "",
   });
@@ -24,6 +25,7 @@ const AddItem = ({ url }) => {
     const formData = new FormData();
     formData.append("name", data.name);
     formData.append("description", data.description);
+    formData.append("discount", data.discount);
     formData.append("price", data.price);
     formData.append("category", data.category);
     formData.append("image", image);
@@ -33,6 +35,7 @@ const AddItem = ({ url }) => {
         name: "",
         description: "",
         price: "",
+        discount:"",
         category: "",
       })
       setImage(false);
@@ -58,8 +61,12 @@ const AddItem = ({ url }) => {
             <input onChange={onChangeHandler} name='name' value={data.name} type="text" placeholder='Type here..' className='border border-gray-600/40 rounded-[10px] h-10 w-2xs pl-2.5' />
           </div>
           <div>
-            <p className='text-[15px] font-semibold pl-1.5 mb-2'>Description</p>
+            <p className='text-[15px] font-semibold pl-1.5 mb-2'>Description(optional)</p>
             <input onChange={onChangeHandler} name='description' value={data.description} type="text" placeholder='Type here..' className='border border-gray-600/40 rounded-[10px] h-10 w-2xs pl-2.5' />
+          </div>
+          <div>
+            <p className='text-[15px] font-semibold pl-1.5 mb-2'>Discount</p>
+            <input onChange={onChangeHandler} name='discount' value={data.discount} type="text" placeholder='Type here..' className='border border-gray-600/40 rounded-[10px] h-10 w-2xs pl-2.5' />
           </div>
           <div>
             <p className='text-[15px] font-semibold pl-1.5 mb-2'>Price</p>

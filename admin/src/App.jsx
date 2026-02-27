@@ -12,7 +12,7 @@ const App = () => {
   return (
     <div>
       <Navbar />
-      <div className='lg:w-[85vw] m-auto flex items-start'>
+      <div className='lg:w-[85vw] m-auto flex items-start min-h-screen'>
         <Sidebar />
         <Routes>
           <Route path='/add' element={<AddItem url={url} />} />

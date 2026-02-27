@@ -63,17 +63,7 @@ export const products = {
       discount: 50,
       ratings: 3.3,
       category: "sofa",
-      description: {
-        brand: "Contemporary",
-        Assembly: "NO",
-        depth: 137,
-        height: 17,
-        weight: 50,
-        capacity: 3,
-        itemWeight: 33,
-        type: "sectional",
-        color: "Walnut",
-      },
+      description: "",
     },
     {
       _id:2,
@@ -84,17 +74,7 @@ export const products = {
       ratings: 4.7,
       discount: 56,
       category: "sofa",
-      description: {
-        brand: "SOCOZI",
-        Assembly: "NO",
-        depth: 137,
-        height: 17,
-        weight: 50,
-        capacity: 3,
-        itemWeight: 33,
-        type: "sectional",
-        color: "Greenish Teal",
-      },
+      description: "",
     },
     {
       _id:3,
@@ -104,17 +84,7 @@ export const products = {
       ratings: 3.2,
       category: "sofa",
       discount: 53,
-      description: {
-        brand: "WESTIDO",
-        Assembly: "NO",
-        depth: 53,
-        height: 16,
-        weight: 350,
-        capacity: 3,
-        itemWeight: 80,
-        type: "Standard",
-        color: "Brown",
-      },
+      description: "",
     },
     {
       _id:4,
@@ -124,17 +94,7 @@ export const products = {
       discount: 60,
       ratings: 5,
       category: "sofa",
-      description: {
-        brand: "SOCOZI",
-        Assembly: "NO",
-        depth: 137,
-        height: 17,
-        weight: 50,
-        capacity: 3,
-        itemWeight: 33,
-        type: "sectional",
-        color: "Cream",
-      },
+      description:"",
     },
     {
       _id:5,
@@ -167,17 +127,7 @@ export const products = {
       discount: 52,
       ratings: 3.5,
       category: "ac",
-      description: {
-        brand: "Whirlpool",
-        Assembly: "NO",
-        depth: 23.5,
-        height: 31.5,
-        weight: 25,
-        capacity: 1.5,
-        itemWeight: 25,
-        type: "Split",
-        color: "White",
-      },
+      description: ""
     },
     {
       _id:7,
@@ -187,7 +137,7 @@ export const products = {
       discount: 40,
       ratings: 3.9,
       category: "ac",
-      description: { /* unchanged */ },
+      description: "",
     },
     {
       _id:8,
@@ -197,7 +147,7 @@ export const products = {
       discount: 33,
       ratings: 4,
       category: "ac",
-      description: { /* unchanged */ },
+      description: "",
     },
     {
       _id:9,
@@ -207,7 +157,7 @@ export const products = {
       discount: 38,
       ratings: 4,
       category: "ac",
-      description: { /* unchanged */ },
+      description: ""
     },
     {
       _id:10,
@@ -217,7 +167,7 @@ export const products = {
       discount: 42,
       ratings: 4,
       category: "ac",
-      description: { /* unchanged */ },
+      description: "",
     }
   ],
 
@@ -230,7 +180,7 @@ export const products = {
       discount: 36,
       ratings: 4.2,
       category: "refrigerator",
-      description: { /* unchanged */ },
+      description: "",
     },
     {
       _id:12,
@@ -240,7 +190,7 @@ export const products = {
       discount: 27,
       ratings: 4.3,
       category: "refrigerator",
-      description: { /* unchanged */ },
+      description:"",
     },
     {
       _id:13,
@@ -250,7 +200,7 @@ export const products = {
       discount: 20,
       ratings: 4.1,
       category: "refrigerator",
-      description: { /* unchanged */ },
+      description: "",
     },
     {
       _id:14,
@@ -260,7 +210,7 @@ export const products = {
       discount: 35,
       ratings: 4.1,
       category: "refrigerator",
-      description: { /* unchanged */ },
+      description: "",
     },
     {
       _id:15,
@@ -270,7 +220,7 @@ export const products = {
       discount: 34,
       ratings: 4,
       category: "refrigerator",
-      description: { /* unchanged */ },
+      description: "",
     }
   ],
 
@@ -283,7 +233,7 @@ export const products = {
       discount: 58,
       ratings: 4,
       category: "bed",
-      description: { /* unchanged */ },
+      description: "",
     },
     {
       _id:17,
@@ -293,7 +243,7 @@ export const products = {
       discount: 43,
       ratings: 4,
       category: "bed",
-      description: { /* unchanged */ },
+      description: "",
     },
     {
       _id:18,
@@ -303,7 +253,7 @@ export const products = {
       discount: 17,
       ratings: 4.0,
       category: "bed",
-      description: { /* unchanged */ },
+      description: "",
     },
     {
       _id:19,
@@ -313,7 +263,7 @@ export const products = {
       discount: 40,
       ratings: 4,
       category: "bed",
-      description: { /* unchanged */ },
+      description: "",
     },
     {
       _id:20,
@@ -323,7 +273,7 @@ export const products = {
       discount: 40,
       ratings: 4,
       category: "bed",
-      description: { /* unchanged */ },
+      description: "",
     }
   ],
 
@@ -336,7 +286,7 @@ export const products = {
       discount: 14,
       ratings: 4.3,
       category: "microwave",
-      description: { /* unchanged */ },
+      description: "",
     },
     {
       _id:22,
@@ -346,7 +296,7 @@ export const products = {
       discount: 25,
       ratings: 4.3,
       category: "microwave",
-      description: { /* unchanged */ },
+      description: "",
     },
     {
       _id:23,
@@ -356,7 +306,7 @@ export const products = {
       discount: 30,
       ratings: 4.3,
       category: "microwave",
-      description: { /* unchanged */ },
+      description: "",
     },
     {
       _id:24,
@@ -366,7 +316,7 @@ export const products = {
       discount: 25,
       ratings: 4.2,
       category: "microwave",
-      description: { /* unchanged */ },
+      description: "",
     },
     {
       _id:25,
@@ -376,7 +326,7 @@ export const products = {
       discount: 30,
       ratings: 4.3,
       category: "microwave",
-      description: { /* unchanged */ },
+      description: "",
     }
   ],
 

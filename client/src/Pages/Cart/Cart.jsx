@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { assets, products } from '../../assets/assets'
 import './Cart.css'
@@ -6,15 +6,36 @@ import { StoreContext } from '../../context/StoreContext'
 
 const Cart = () => {
   const { cartItems, getTotalcartAmt, addTocart, removeFromcart } = useContext(StoreContext);
+  const [productsList, setProductsList] = useState([]);
   const navigate = useNavigate();
   const onSubmit = () => {
     if (Object.keys(cartItems).length === 0) {
       alert("Your cart is empty.");
     }
   }
-  useEffect(() => {
-    console.log(cartItems);
 
+  const fetchProducts = async () => {
+    try {
+      const response = await axios.get(`${url}/api/product/list`);
+      if (response.data.success) {
+        setProductsList(response.data.data);
+        setError(null);
+      } else {
+        setError(response.data.message);
+        console.log(response.data.message);
+      }
+    } catch (err) {
+      setError('Failed to fetch products');
+      console.error(err);
+    }
+  }
+
+  const getDiscoount = () => {
+
+  }
+
+  useEffect(() => {
+    fetchProducts();
   }, [])
   return (
     <div className='cart'>
