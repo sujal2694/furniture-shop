@@ -49,7 +49,7 @@ const ProductsList = ({ url }) => {
         {productsList.map((item, index) => {
           return (
             <div key={index} className="flex flex-col sm:flex-row items-start sm:items-center p-4 gap-4">
-              <div className="relative w-full sm:w-28 h-44 sm:h-28 bg-gray-100 rounded-md flex items-center justify-center overflow-hidden flex-shrink-0">
+              <div className="relative w-full sm:w-28 h-44 sm:h-28 bg-gray-100 rounded-md flex items-center justify-center overflow-hidden">
                 <img
                   src={`${url}/images/${item.image}`}
                   alt={item.name}
