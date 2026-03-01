@@ -24,7 +24,7 @@ const App = () => {
   return (
     <div>
       {!token
-        ? <LoginPage />
+        ? <LoginPage setToken={setToken} token={token} url={url}/>
         : <><Navbar />
           <div className='lg:w-[85vw] h-screen max-h-[500vh] m-auto flex items-start'>
             <Sidebar />
