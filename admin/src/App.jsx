@@ -25,7 +25,7 @@ const App = () => {
     <div>
       {!token
         ? <LoginPage setToken={setToken} token={token} url={url}/>
-        : <><Navbar />
+        : <><Navbar setToken={setToken}/>
           <div className='lg:w-[85vw] h-screen max-h-[500vh] m-auto flex items-start'>
             <Sidebar />
             <Routes>
