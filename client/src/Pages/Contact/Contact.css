@@ -1,0 +1,83 @@
+.contact-us {
+    width: 40vw;
+    margin: auto;
+    text-align: center;
+}
+
+.contact-us h1 {
+    font-size: 30px;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+.contact-form {
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.contact-form .multi-fields {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.contact-form input,
+.contact-form textarea {
+    border: 1px solid #050505e7;
+    border-radius: 6px;
+    padding: 8px;
+    transition: all 0.1s ease-in-out;
+}
+
+.contact-form textarea {
+    width: 100%;
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+.contact-form input {
+    width: 49%;
+    padding: 10px 15px;
+}
+
+.contact-form input::placeholder {
+    text-transform: uppercase;
+    font-size: 13px;
+    letter-spacing: 1px;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: 2px solid #55aff8;
+    border: none;
+}
+
+.contact-form .contact-submit-btn {
+    width: 100%;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    background-color: #55aff8;
+    padding: 15px;
+    margin-top: 20px;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+
+@media (max-width:900px) {
+    .contact-us {
+        width: 60vw;
+    }
+}
+
+@media (max-width:550px) {
+    .contact-us {
+        width: 90vw;
+    }
+}
