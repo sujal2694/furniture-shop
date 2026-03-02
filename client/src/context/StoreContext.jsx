@@ -14,6 +14,7 @@ export const StoreContextProvider = ({ children }) => {
   const [userData, setUserData] = useState({ name: '', email: '', password: '' });
   const [token, setToken] = useState();
   const [cartItems, setCartItems] = useState({});
+  const [productsList, setProductsList] = useState([]);
 
   const addTocart = async (itemid) => {
     setCartItems(prev => ({ ...prev, [itemid]: (prev[itemid] || 0) + 1 }));
@@ -60,6 +61,19 @@ export const StoreContextProvider = ({ children }) => {
     return totalAmt;
   }
 
+  const fetchProductsList = async () => {
+    try {
+      const response = await axios.get(url + "/api/product/list");
+      if (response.data && response.data.data) {
+        setProductsList(response.data.data);
+      } else if (response.data) {
+        setProductsList(Array.isArray(response.data) ? response.data : response.data.success === false ? [] : []);
+      }
+    } catch (err) {
+      console.error("Error fetching products:", err);
+    }
+  }
+
   const cartData = async (authToken) => {
     try {
       const response = await axios.post(url + "/api/cart/get", {}, { headers: { token: authToken } });
@@ -72,6 +86,7 @@ export const StoreContextProvider = ({ children }) => {
 
   useEffect(() => {
     async function loadData() {
+      await fetchProductsList();
       const t = localStorage.getItem("token");
       if (t) {
         setToken(t);
@@ -99,6 +114,8 @@ export const StoreContextProvider = ({ children }) => {
     addTocart,
     removeFromcart,
     getTotalcartAmt,
+    productsList,
+    setProductsList,
   };
 
   return <StoreContext.Provider value={contextValue}>{children}</StoreContext.Provider>;

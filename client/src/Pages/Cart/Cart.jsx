@@ -1,12 +1,14 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import axios from 'axios'
 import { assets, products } from '../../assets/assets'
 import './Cart.css'
 import { StoreContext } from '../../context/StoreContext'
 
 const Cart = () => {
-  const { cartItems, getTotalcartAmt, addTocart, removeFromcart } = useContext(StoreContext);
+  const { cartItems, getTotalcartAmt, addTocart, removeFromcart, url } = useContext(StoreContext);
   const [productsList, setProductsList] = useState([]);
+  const [error, setError] = useState(null);
   const navigate = useNavigate();
   const onSubmit = () => {
     if (Object.keys(cartItems).length === 0) {
@@ -30,7 +32,7 @@ const Cart = () => {
     }
   }
 
-  const getDiscoount = () => {
+  const getDiscount = () => {
 
   }
 
@@ -111,7 +113,10 @@ const Cart = () => {
             </li>
           </ul>
 
-          <button onClick={onSubmit} className='cart-rent-btn'>Rent Now</button>
+          <button onClick={() => {
+            onSubmit();
+            navigate("/placeorder")
+          }} className='cart-rent-btn'>Rent Now</button>
         </div>
 
 

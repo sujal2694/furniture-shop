@@ -1,1 +1,10 @@
 @import "tailwindcss";
+
+/*for display log out button*/
+.hover-page{
+    display: none;
+}
+
+.group:hover .hover-page{
+    display: block;
+}

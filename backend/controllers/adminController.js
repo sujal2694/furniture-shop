@@ -61,7 +61,7 @@ export const loginUser = async (req,res)=>{
         const isMatch = await bcrypt.compare(password,admin.password)
 
         if (!isMatch) {
-            return res,json({success:false,message:"Invalid credentials"})
+            return res.json({success:false,message:"Invalid credentials"})
         }
         
         const token = createToken(admin._id);

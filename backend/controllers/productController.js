@@ -1,11 +1,11 @@
-import { prodcutsModel } from "../models/prodcutModel.js";
+import { productModel } from "../models/prodcutModel.js";
 import fs from 'fs'
 
 //add product
 export const addProduct = async (req,res) => {
     let image_filename = `${req.file.filename}`;
 
-    const product = new prodcutsModel({
+    const product = new productModel({
         name:req.body.name,
         description:req.body.description,
         discount:req.body.discount,
@@ -26,11 +26,11 @@ export const addProduct = async (req,res) => {
 //product list
 export const productList = async (req,res)=>{
     try {
-        const products = await prodcutsModel.find({});
+        const products = await productModel.find({});
         res.json({success:true,data:products});
     } catch (error) {
         console.log(error);
-        res.json({succes:false,message:"Error"})
+        res.json({success:false,message:"Error"})
     }
 }
 
@@ -39,12 +39,12 @@ export const productList = async (req,res)=>{
 
 export const removeProduct = async (req,res) => {
     try {
-        const product = await prodcutsModel.findById(req.body.id);
+        const product = await productModel.findById(req.body.id);
         fs.unlink(`uploads/${product.image}`,()=>{})
-        await prodcutsModel.findByIdAndDelete(req.body.id);
+        await productModel.findByIdAndDelete(req.body.id);
         res.json({success:true,message:"Product removed"})
     } catch (error) {
         console.log(error);
-        res.json({succes:false,message:"error"})
+        res.json({success:false,message:"error"})
     }
 }
