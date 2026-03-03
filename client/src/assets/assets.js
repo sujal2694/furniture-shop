@@ -110,7 +110,7 @@ export const products = {
   ac: [
     {
       _id:6,
-      title: "Whirlpool 1.5 Ton 5 Star, Magicool Inverter Split AC (MAGICOOL 15T 5S INV CNV S5K2PP0, Copper, Convertible 4-in-1 Cooling Mode, HD Filter White)",
+      title: "Whirlpool 1.5 Ton 5 Star, Magicool Inverter Split AC",
       image: ac_img_1,
       price: 21990,
       discount: 52,
@@ -120,7 +120,7 @@ export const products = {
     },
     {
       _id:7,
-      title: "Godrej 1 Ton 5 Star, 5 Years Comprehensive Warranty, AI Powered, 5-in-1 Convertible Cooling, Self Clean, Inverter Split AC ...",
+      title: "Godrej 1 Ton 5 Star, 5 Years Comprehensive Warranty, AI Powered, 5-in-1 Convertible Cooling, Self Clean, Inverter Split AC",
       image: ac_img_2,
       price: 16999,
       discount: 40,
@@ -130,7 +130,7 @@ export const products = {
     },
     {
       _id:8,
-      title: "Samsung 1.5 Ton 3 Star WiFi Enabled Bespoke AI WindFree Air Conditioner ...",
+      title: "Samsung 1.5 Ton 3 Star WiFi Enabled Bespoke AI WindFree Air Conditioner",
       image: ac_img_3,
       price: 23999,
       discount: 33,
@@ -140,7 +140,7 @@ export const products = {
     },
     {
       _id:9,
-      title: "Cruise 1.5 Ton 3 Star Inverter Split AC with 7-Stage Air Filtration ...",
+      title: "Cruise 1.5 Ton 3 Star Inverter Split AC with 7-Stage Air Filtration",
       image: ac_img_4,
       price: 18990,
       discount: 38,
@@ -150,7 +150,7 @@ export const products = {
     },
     {
       _id:10,
-      title: "Voltas 1.5 Ton 3 Star Inverter Split AC (Copper, 4-in-1 Adjustable Mode ...) ...",
+      title: "Voltas 1.5 Ton 3 Star Inverter Split AC (Copper, 4-in-1 Adjustable Mode)",
       image: ac_img_5,
       price: 19999    ,
       discount: 42,
@@ -163,7 +163,7 @@ export const products = {
   refrigerator: [
     {
       _id:11,
-      title: "Haier 185L 2 Star Direct Cool Single Door Refrigerator ...",
+      title: "Haier 185L 2 Star Direct Cool Single Door Refrigerator",
       image: refrigerator_img_1,
       price: 25000,
       discount: 36,
@@ -173,7 +173,7 @@ export const products = {
     },
     {
       _id:12,
-      title: "LG Smart Choice, 446 L, 1 Star, Convertible ...",
+      title: "LG Smart Choice, 446 L, 1 Star, Convertible",
       image: refrigerator_img_2,
       price: 21999,
       discount: 27,
@@ -183,7 +183,7 @@ export const products = {
     },
     {
       _id:13,
-      title: "Samsung 236 L, 3 Star, Convertible ...",
+      title: "Samsung 236 L, 3 Star, Convertible",
       image: refrigerator_img_3,
       price: 8990,
       discount: 20,
@@ -193,7 +193,7 @@ export const products = {
     },
     {
       _id:14,
-      title: "Haier 240L 2 Star Frost Free Top Mount Double Door ...",
+      title: "Haier 240L 2 Star Frost Free Top Mount Double Door",
       image: refrigerator_img_4,
       price: 10499,
       discount: 35,
@@ -203,7 +203,7 @@ export const products = {
     },
     {
       _id:15,
-      title: "Samsung 350 L, 3 Star, Convertible 5-in-1 ...",
+      title: "Samsung 350 L, 3 Star, Convertible 5-in-1",
       image: refrigerator_img_5,
       price: 11990,
       discount: 34,
@@ -216,7 +216,7 @@ export const products = {
   bed: [
     {
       _id:16,
-      title: "RATANDHARA FURNITURE Single Size Leopard Sheesham Wood Platform Bed Without Storage ...",
+      title: "RATANDHARA FURNITURE Single Size Leopard Sheesham Wood Platform Bed Without Storage",
       image: bed_img_1,
       price: 7490,
       discount: 58,
@@ -226,7 +226,7 @@ export const products = {
     },
     {
       _id:17,
-      title: "Acacia Solid Sheesham Wood Queen Size Bed ...",
+      title: "Acacia Solid Sheesham Wood Queen Size Bed",
       image: bed_img_2,
       price: 11999,
       discount: 43,
@@ -236,7 +236,7 @@ export const products = {
     },
     {
       _id:18,
-      title: "s k modern art Wrought Iron Storage Bed ...",
+      title: "s k modern art Wrought Iron Storage Bed",
       image: bed_img_3,
       price: 10999,
       discount: 17,
@@ -246,7 +246,7 @@ export const products = {
     },
     {
       _id:19,
-      title: "Klenta Home Decor Modern Queen Size Upholstered Bed ...",
+      title: "Klenta Home Decor Modern Queen Size Upholstered Bed",
       image: bed_img_4,
       price: 9999,
       discount: 40,
@@ -256,7 +256,7 @@ export const products = {
     },
     {
       _id:20,
-      title: "BedCult Furniture Solid Sheesham Wood Wooden Single Size Bed ...",
+      title: "BedCult Furniture Solid Sheesham Wood Wooden Single Size Bed",
       image: bed_img_5,
       price: 10999,
       discount: 40,
@@ -269,7 +269,7 @@ export const products = {
   microwave: [
     {
       _id:21,
-      title: "Panasonic 20L Solo Microwave Oven ...",
+      title: "Panasonic 20L Solo Microwave Oven",
       image: microwave_img_1,
       price: 4499,
       discount: 14,
@@ -279,7 +279,7 @@ export const products = {
     },
     {
       _id:22,
-      title: "Panasonic 27L Convection Microwave Oven ...",
+      title: "Panasonic 27L Convection Microwave Oven",
       image: microwave_img_2,
       price: 6490,
       discount: 25,
@@ -289,7 +289,7 @@ export const products = {
     },
     {
       _id:23,
-      title: "LG 28 L Convection Microwave Oven ...",
+      title: "LG 28 L Convection Microwave Oven",
       image: microwave_img_3,
       price: 5999,
       discount: 30,
@@ -299,7 +299,7 @@ export const products = {
     },
     {
       _id:24,
-      title: "Samsung 28 L Convection Microwave Oven ...",
+      title: "Samsung 28 L Convection Microwave Oven",
       image: microwave_img_4,
       price: 6999,
       discount: 25,
@@ -309,7 +309,7 @@ export const products = {
     },
     {
       _id:25,
-      title: "IFB 30L Convection Microwave Oven ...",
+      title: "IFB 30L Convection Microwave Oven",
       image: microwave_img_5,
       price: 7299,
       discount: 30,
@@ -322,7 +322,7 @@ export const products = {
   center_table: [
     {
       _id:26,
-      title: "CREATIVE SKILLS Coffee Table 2 Tier ...",
+      title: "CREATIVE SKILLS Coffee Table 2 Tier",
       image: table_img_1,
       price: 2999,
       discount: 50,
@@ -332,7 +332,7 @@ export const products = {
     },
     {
       _id:27,
-      title: "Lukzer Engineered Wood Center Table with Wheels ...",
+      title: "Lukzer Engineered Wood Center Table with Wheels",
       image: table_img_2,
       price: 2499,
       discount: 50,
@@ -342,7 +342,7 @@ export const products = {
     },
     {
       _id:28,
-      title: "THE KASHTH Retro Shape Brown Coffee Table ...",
+      title: "THE KASHTH Retro Shape Brown Coffee Table",
       image: table_img_3,
       price: 3490,
       discount: 50,
@@ -352,7 +352,7 @@ export const products = {
     },
     {
       _id:29,
-      title: "Home Centre Clary Coffee Table – White ...",
+      title: "Home Centre Clary Coffee Table – White",
       image: table_img_4,
       price: 2790,
       discount: 50,
@@ -362,7 +362,7 @@ export const products = {
     },
     {
       _id:30,
-      title: "ARTILUXE Orchid Marble Round Nesting Center Table ...",
+      title: "ARTILUXE Orchid Marble Round Nesting Center Table",
       image: table_img_5,
       price: 5989,
       discount: 20,

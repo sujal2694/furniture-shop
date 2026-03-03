@@ -11,11 +11,11 @@ const ProductPage = () => {
         <h1>All <span>Products</span></h1>
       </div>
       <div className="products">
-        {productsList && productsList.length > 0 ? productsList.map((item, index) => {
+        {productsList.map((item, index) => {
           return (
             <div className='item' key={index}>
-              <img className='item-img' src={`${url}/images/${item.image}`} alt={item.title} />
-              <h3 className='item-name'>{item.title}</h3>
+              <img className='item-img' src={`${url}/images/${item.image}`} alt="" />
+              <h3 className='item-name'>{item.name}</h3>
               <h4 className='item-price'>₹{item.price}</h4>
               <div className="add-icon">
                 {!cartItems[item._id]
@@ -28,7 +28,7 @@ const ProductPage = () => {
               </div>
             </div>
           )
-        }) : <p>Loading products...</p>}
+        })}
       </div>
     </div>
   )

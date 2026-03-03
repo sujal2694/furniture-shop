@@ -22,7 +22,7 @@ export const StoreContextProvider = ({ children }) => {
       try {
         await axios.post(url + "/api/cart/add", { itemid }, { headers: { token } })
       } catch (err) {
-        // swallow or handle error as needed
+        console.log(err);
       }
     }
   }
@@ -40,7 +40,7 @@ export const StoreContextProvider = ({ children }) => {
       try {
         await axios.post(url + "/api/cart/remove", { itemid }, { headers: { token } });
       } catch (err) {
-        // swallow or handle error as needed
+        console.log(err);
       }
     }
   }
@@ -62,26 +62,17 @@ export const StoreContextProvider = ({ children }) => {
   }
 
   const fetchProductsList = async () => {
-    try {
-      const response = await axios.get(url + "/api/product/list");
-      if (response.data && response.data.data) {
-        setProductsList(response.data.data);
-      } else if (response.data) {
-        setProductsList(Array.isArray(response.data) ? response.data : response.data.success === false ? [] : []);
-      }
-    } catch (err) {
-      console.error("Error fetching products:", err);
+    const response = await axios.get(url + "/api/product/list");
+    if (response.data.success) {
+      setProductsList(response.data.data);
     }
+    console.log(response.data.data);
   }
 
   const cartData = async (authToken) => {
-    try {
-      const response = await axios.post(url + "/api/cart/get", {}, { headers: { token: authToken } });
-      setCartItems(response.data.cartData);
-      console.log(response.data);
-    } catch (err) {
-      // ignore for now
-    }
+    const response = await axios.post(url + "/api/cart/get", {}, { headers: { token: authToken } });
+    setCartItems(response.data.cartData);
+    console.log(response.data.cartData);
   }
 
   useEffect(() => {

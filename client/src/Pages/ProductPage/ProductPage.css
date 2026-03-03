@@ -35,6 +35,16 @@
     height: 100%;
 }
 
+.products .item .item-name{
+    font-size: 16px;
+}
+
+.products .item .item-price{
+    font-weight: 500;
+    letter-spacing: 1px;
+    margin-top: 4px;
+}
+
 .products .item:nth-child(21) .item-img,
 .item:nth-child(22) .item-img,
 .item:nth-child(23) .item-img,

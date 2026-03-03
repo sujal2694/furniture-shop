@@ -79,7 +79,6 @@ const Cart = () => {
                 ) : ""}
               </div>
             </div>
-
           </div> : <div className='empty'>
             <p>Your cart is empty</p>
             <button onClick={() => navigate("/products")}>Rent Now</button>
@@ -115,7 +114,6 @@ const Cart = () => {
 
           <button onClick={() => {
             onSubmit();
-            navigate("/placeorder")
           }} className='cart-rent-btn'>Rent Now</button>
         </div>
 
