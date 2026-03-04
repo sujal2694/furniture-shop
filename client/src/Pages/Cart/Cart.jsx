@@ -1,14 +1,11 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import axios from 'axios'
-import { assets, products } from '../../assets/assets'
+import { assets } from '../../assets/assets'
 import './Cart.css'
 import { StoreContext } from '../../context/StoreContext'
 
 const Cart = () => {
-  const { cartItems, getTotalcartAmt, addTocart, removeFromcart, url } = useContext(StoreContext);
-  const [productsList, setProductsList] = useState([]);
-  const [error, setError] = useState(null);
+  const { cartItems, getTotalcartAmt, addTocart, removeFromcart, productsList, url } = useContext(StoreContext);
   const navigate = useNavigate();
   const onSubmit = () => {
     if (Object.keys(cartItems).length === 0) {
@@ -16,29 +13,21 @@ const Cart = () => {
     }
   }
 
-  const fetchProducts = async () => {
-    try {
-      const response = await axios.get(`${url}/api/product/list`);
-      if (response.data.success) {
-        setProductsList(response.data.data);
-        setError(null);
-      } else {
-        setError(response.data.message);
-        console.log(response.data.message);
-      }
-    } catch (err) {
-      setError('Failed to fetch products');
-      console.error(err);
-    }
-  }
-
   const getDiscount = () => {
-
+    let discounts = [];
+    let discountValue = 0;
+    Object.keys(cartItems).map((itemId) => {
+      const itemInfo = productsList.find(p => p._id === itemId);
+      if (itemInfo) {
+        discounts.push(Number(itemInfo.discount));
+      }
+    })
+    for (let i = 0; i < discounts.length; i++) {
+      discountValue += (discounts[i] / discounts.length)
+    }
+    return discountValue;
   }
 
-  useEffect(() => {
-    fetchProducts();
-  }, [])
   return (
     <div className='cart'>
       <div className="cart-products">
@@ -56,27 +45,21 @@ const Cart = () => {
 
             <div className="cart-products-list">
               <div className="cart-item">
-                {Object.keys(cartItems).length > 0 ? (
-                  Object.keys(cartItems).map((itemId) => {
-                    const qty = cartItems[itemId];
-                    let itemInfo = null;
-                    for (const catArr of Object.values(products)) {
-                      itemInfo = catArr.find((p) => p._id === Number(itemId));
-                      if (itemInfo) break;
-                    }
-                    return itemInfo ? (
-                      <div key={itemId} className="cart-item-row">
-                        <img className='cart-item-img' src={itemInfo.image} alt="" />
-                        <p>{itemInfo.title}</p>
-                        <span>₹{itemInfo.price}</span>
-                        <p className='cart-item-quantity'>{qty}</p>
-                        <p className='cart-item-discount'>-{ }%</p>
-                        <img onClick={() => addTocart(Number(itemId))} src={assets.add_icon_green} className='add-btn' alt="" />
-                        <img onClick={() => removeFromcart(Number(itemId))} src={assets.remove_icon_red} className='remove-btn' alt="" />
-                      </div>
-                    ) : null;
-                  })
-                ) : ""}
+                {Object.keys(cartItems).map((itemId) => {
+                  const qty = cartItems[itemId];
+                  const itemInfo = productsList.find((p) => p._id === itemId);
+                  return qty > 0 && itemInfo ? (
+                    <div key={itemId} className="cart-item-row">
+                      <img className='cart-item-img' src={`${url}/images/${itemInfo.image}`} alt="" />
+                      <p>{itemInfo.name}</p>
+                      <span>₹{itemInfo.price}</span>
+                      <p className='cart-item-quantity'>{qty}</p>
+                      <p className='cart-item-discount'>-{itemInfo.discount}%</p>
+                      <img onClick={() => addTocart(Number(itemId))} src={assets.add_icon_green} className='add-btn' alt="" />
+                      <img onClick={() => removeFromcart(Number(itemId))} src={assets.remove_icon_red} className='remove-btn' alt="" />
+                    </div>
+                  ) : null;
+                })}
               </div>
             </div>
           </div> : <div className='empty'>
@@ -103,12 +86,12 @@ const Cart = () => {
             </li>
             <li className='cart-total-discount'>
               <p>Discounts:</p>
-              <span>0</span>
+              <span>-{getDiscount() === 0 ? 0 : getDiscount()}%</span>
             </li>
             <hr className='section' />
             <li className='cart-total-bill'>
               <p>Total:</p>
-              <span>₹{getTotalcartAmt()}</span>
+              <span>₹{getTotalcartAmt() * (getDiscount() / 100)}</span>
             </li>
           </ul>
 

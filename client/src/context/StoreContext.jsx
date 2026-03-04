@@ -25,6 +25,7 @@ export const StoreContextProvider = ({ children }) => {
         console.log(err);
       }
     }
+    console.log(cartItems);
   }
 
   const removeFromcart = async (itemid) => {
@@ -43,6 +44,7 @@ export const StoreContextProvider = ({ children }) => {
         console.log(err);
       }
     }
+    console.log(cartItems);
   }
 
   const getTotalcartAmt = () => {
@@ -50,12 +52,7 @@ export const StoreContextProvider = ({ children }) => {
     for (const itemId in cartItems) {
       const qty = cartItems[itemId];
       if (!qty) continue;
-      const idNum = Number(itemId);
-      let itemInfo = null;
-      for (const catArr of Object.values(products)) {
-        itemInfo = catArr.find((p) => p._id === idNum);
-        if (itemInfo) break;
-      }
+      const itemInfo = productsList.find((p) => p._id === itemId);
       if (itemInfo) totalAmt += itemInfo.price * qty;
     }
     return totalAmt;
@@ -66,13 +63,11 @@ export const StoreContextProvider = ({ children }) => {
     if (response.data.success) {
       setProductsList(response.data.data);
     }
-    console.log(response.data.data);
   }
 
   const cartData = async (authToken) => {
     const response = await axios.post(url + "/api/cart/get", {}, { headers: { token: authToken } });
     setCartItems(response.data.cartData);
-    console.log(response.data.cartData);
   }
 
   useEffect(() => {
