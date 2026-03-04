@@ -32,7 +32,7 @@
 }
 
 .place-order-left input:focus{
-    outline: 2px solid tomato;
+    outline: 2px solid rgb(56, 242, 255);
 }
 
 .place-order-left .multi-fields{
