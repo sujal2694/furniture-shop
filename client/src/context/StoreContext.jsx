@@ -15,6 +15,8 @@ export const StoreContextProvider = ({ children }) => {
   const [token, setToken] = useState();
   const [cartItems, setCartItems] = useState({});
   const [productsList, setProductsList] = useState([]);
+  let deliveryFees = 40;
+
 
   const addTocart = async (itemid) => {
     const id = String(itemid);
@@ -31,7 +33,6 @@ export const StoreContextProvider = ({ children }) => {
         console.error("cart add request failed", err);
       }
     }
-    console.log(cartItems);
   }
 
   const removeFromcart = async (itemid) => {
@@ -78,6 +79,30 @@ export const StoreContextProvider = ({ children }) => {
     setCartItems(response.data.cartData);
   }
 
+  const getDiscount = () => {
+    const ids = Object.keys(cartItems);
+    if (ids.length === 0 || productsList.length === 0) {
+      return 0;
+    }
+
+    const discounts = ids
+      .map((itemId) => {
+        const itemInfo = productsList.find((p) => p._id === itemId);
+        console.log(itemInfo);
+
+        return itemInfo ? Number(itemInfo.discount) : 0;
+      })
+      .filter((d) => !isNaN(d));
+
+    if (discounts.length === 0) {
+      return 0;
+    }
+    const sum = discounts.reduce((acc, cur) => acc + cur, 0);
+    const avg = sum / discounts.length;
+
+    return avg.toFixed(1);
+  }
+
   useEffect(() => {
     async function loadData() {
       await fetchProductsList();
@@ -88,6 +113,7 @@ export const StoreContextProvider = ({ children }) => {
       }
     }
     loadData();
+    console.log(cartItems);
   }, [])
 
   const contextValue = {
@@ -110,6 +136,8 @@ export const StoreContextProvider = ({ children }) => {
     getTotalcartAmt,
     productsList,
     setProductsList,
+    getDiscount,
+    deliveryFees,
   };
 
   return <StoreContext.Provider value={contextValue}>{children}</StoreContext.Provider>;

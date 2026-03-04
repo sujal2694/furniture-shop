@@ -5,32 +5,13 @@ import './Cart.css'
 import { StoreContext } from '../../context/StoreContext'
 
 const Cart = () => {
-  const { cartItems, getTotalcartAmt, addTocart, removeFromcart, productsList, url } = useContext(StoreContext);
+  const { cartItems, getTotalcartAmt, addTocart, removeFromcart, productsList, url, getDiscount, deliveryFees } = useContext(StoreContext);
   const navigate = useNavigate();
+  const totalCartAmt = (getTotalcartAmt() - (getDiscount() === 0 ? 0 :(getTotalcartAmt() * getDiscount()) / 100)).toFixed(2)
   const onSubmit = () => {
     if (Object.keys(cartItems).length === 0) {
       alert("Your cart is empty.");
     }
-  }
-
-  const getDiscount = () => {
-    let discounts = [];
-    let discountValue = 0;
-    Object.keys(cartItems).map((itemId) => {
-      const itemInfo = productsList.find(p => p._id === itemId);
-      if (itemInfo) {
-        discounts.push(Number(itemInfo.discount));
-      }
-    })
-    for (let i = 0; i < discounts.length; i++) {
-      if (discounts.length > 0) {
-        discountValue += (discounts[i] / discounts.length)
-      } else {
-        discountValue = 0;
-      }
-    }
-    console.log(discountValue);
-    return discountValue.toFixed(2);
   }
 
   return (
@@ -91,18 +72,23 @@ const Cart = () => {
             </li>
             <li className='cart-total-discount'>
               <p>Discounts:</p>
-              <span>-{getDiscount() === 0 ? 0 : getDiscount()}%</span>
+              <span>-{getDiscount()}%</span>
+            </li>
+            <li className='cart-total-price'>
+              <p>Delivery Fees:</p>
+              <span>₹{deliveryFees}</span>
             </li>
             <hr className='section' />
             <li className='cart-total-bill'>
               <p>Total:</p>
-              <span>₹{getTotalcartAmt() * (getDiscount() === 0 ? 0 : getDiscount() / 100)}</span>
+              <span>₹{Number(totalCartAmt) + Number(deliveryFees)}</span>
             </li>
           </ul>
 
           <button onClick={() => {
             onSubmit();
-          }} className='cart-rent-btn'>Rent Now</button>
+            navigate("/placeorder")
+          }} className='cart-rent-btn'>Shop Now</button>
         </div>
 
 

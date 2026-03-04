@@ -10,6 +10,7 @@ import About from './Pages/About/About'
 import Contact from './Pages/Contact/Contact'
 import { Toaster } from 'react-hot-toast'
 import Cart from './Pages/Cart/Cart'
+import PlaceOrder from './Pages/PlaceOrder/PlaceOrder'
 
 const App = () => {
   const { loginPopUp } = useContext(StoreContext);
@@ -23,6 +24,7 @@ const App = () => {
         <Route path='/contact' element={<Contact />} />
         <Route path='/products' element={<ProductPage />} />
         <Route path='/cart' element={<Cart />} />
+        <Route path='/placeorder' element={<PlaceOrder/>}/>
       </Routes>
       <Footer />
       <Toaster />
