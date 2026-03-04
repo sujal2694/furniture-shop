@@ -17,34 +17,42 @@ export const StoreContextProvider = ({ children }) => {
   const [productsList, setProductsList] = useState([]);
 
   const addTocart = async (itemid) => {
-    setCartItems(prev => ({ ...prev, [itemid]: (prev[itemid] || 0) + 1 }));
+    const id = String(itemid);
+
+    setCartItems(prev => {
+      const next = { ...prev, [id]: (prev[id] || 0) + 1 };
+      return next;
+    });
+
     if (token) {
       try {
-        await axios.post(url + "/api/cart/add", { itemid }, { headers: { token } })
+        await axios.post(url + "/api/cart/add", { itemid: id }, { headers: { token } });
       } catch (err) {
-        console.log(err);
+        console.error("cart add request failed", err);
       }
     }
     console.log(cartItems);
   }
 
   const removeFromcart = async (itemid) => {
+    const id = String(itemid);
+
     setCartItems(prev => {
-      const count = prev[itemid] || 0;
+      const count = prev[id] || 0;
       if (count <= 1) {
-        const { [itemid]: _, ...rest } = prev;
+        const { [id]: _, ...rest } = prev;
         return rest;
       }
-      return { ...prev, [itemid]: count - 1 };
+      return { ...prev, [id]: count - 1 };
     });
+
     if (token) {
       try {
-        await axios.post(url + "/api/cart/remove", { itemid }, { headers: { token } });
+        await axios.post(url + "/api/cart/remove", { itemid: id }, { headers: { token } });
       } catch (err) {
-        console.log(err);
+        console.error("cart remove request failed", err);
       }
     }
-    console.log(cartItems);
   }
 
   const getTotalcartAmt = () => {

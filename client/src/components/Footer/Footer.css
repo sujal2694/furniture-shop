@@ -50,6 +50,49 @@
     padding-left: 20px;
 }
 
+.social-links li{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 10px;
+}
+
+.social-links .facebook i{
+    font-size: 22px;
+    color: #3669f8;
+}
+
+.social-links .facebook:hover p{
+    color: #3669f8;
+}
+
+.social-links .youtube:hover p{
+    color: #f85336;
+}
+
+.social-links .twitter-x:hover p{
+    color: #080808;
+}
+
+.social-links .insta:hover p{
+    color: #f83636;
+}
+
+.social-links .youtube i{
+    font-size: 22px;
+    color: #f83636;
+}
+
+.social-links .twitter-x i{
+    font-size: 22px;
+    color: #080808;
+}
+
+.social-links .insta i{
+    font-size: 22px;
+    color: #f85336;
+}
+
 .footer-text-para {
     font-size: 14px;
     padding: 20px 0;

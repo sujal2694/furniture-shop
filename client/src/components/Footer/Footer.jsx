@@ -21,16 +21,20 @@ const Footer = () => {
 
                     <ul className="social-links">
                         <h1>Social Links</h1>
-                        <li>
+                        <li className='facebook'>
+                            <i className='fab fa-facebook'></i>
                             <p>Facebook</p>
                         </li>
-                        <li>
+                        <li className='youtube'>
+                            <i className='fab fa-youtube'></i>
                             <p>YouTube</p>
                         </li>
-                        <li>
+                        <li className='twitter-x'>
+                            <i className='fab fa-x-twitter'></i>
                             <p>X</p>
                         </li>
-                        <li>
+                        <li className='insta'>
+                            <i className='fab fa-instagram'></i>
                             <p>Instagram</p>
                         </li>
                     </ul>

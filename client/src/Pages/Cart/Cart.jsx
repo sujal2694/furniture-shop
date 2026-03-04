@@ -23,9 +23,14 @@ const Cart = () => {
       }
     })
     for (let i = 0; i < discounts.length; i++) {
-      discountValue += (discounts[i] / discounts.length)
+      if (discounts.length > 0) {
+        discountValue += (discounts[i] / discounts.length)
+      } else {
+        discountValue = 0;
+      }
     }
-    return discountValue;
+    console.log(discountValue);
+    return discountValue.toFixed(2);
   }
 
   return (
@@ -55,8 +60,8 @@ const Cart = () => {
                       <span>₹{itemInfo.price}</span>
                       <p className='cart-item-quantity'>{qty}</p>
                       <p className='cart-item-discount'>-{itemInfo.discount}%</p>
-                      <img onClick={() => addTocart(Number(itemId))} src={assets.add_icon_green} className='add-btn' alt="" />
-                      <img onClick={() => removeFromcart(Number(itemId))} src={assets.remove_icon_red} className='remove-btn' alt="" />
+                      <img onClick={() => addTocart(itemId)} src={assets.add_icon_green} className='add-btn' alt="" />
+                      <img onClick={() => removeFromcart(itemId)} src={assets.remove_icon_red} className='remove-btn' alt="" />
                     </div>
                   ) : null;
                 })}
@@ -91,7 +96,7 @@ const Cart = () => {
             <hr className='section' />
             <li className='cart-total-bill'>
               <p>Total:</p>
-              <span>₹{getTotalcartAmt() * (getDiscount() / 100)}</span>
+              <span>₹{getTotalcartAmt() * (getDiscount() === 0 ? 0 : getDiscount() / 100)}</span>
             </li>
           </ul>
 
