@@ -1,6 +1,6 @@
 import jwt from 'jsonwebtoken'
 
-export const authMiddleware = async(req,res,next)=>{
+const authMiddleware = async(req,res,next)=>{
     const {token} = req.headers;
     if(!token){
         return res.json({success:false,message:'Not authorised login again'})
@@ -16,3 +16,4 @@ export const authMiddleware = async(req,res,next)=>{
 
 }
 
+export default authMiddleware;

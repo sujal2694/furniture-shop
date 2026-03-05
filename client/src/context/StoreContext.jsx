@@ -88,8 +88,6 @@ export const StoreContextProvider = ({ children }) => {
     const discounts = ids
       .map((itemId) => {
         const itemInfo = productsList.find((p) => p._id === itemId);
-        console.log(itemInfo);
-
         return itemInfo ? Number(itemInfo.discount) : 0;
       })
       .filter((d) => !isNaN(d));
@@ -113,7 +111,6 @@ export const StoreContextProvider = ({ children }) => {
       }
     }
     loadData();
-    console.log(cartItems);
   }, [])
 
   const contextValue = {

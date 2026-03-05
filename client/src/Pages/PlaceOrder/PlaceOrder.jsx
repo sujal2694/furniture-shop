@@ -8,7 +8,7 @@ import toast from 'react-hot-toast'
 import { useNavigate } from 'react-router-dom'
 
 const PlaceOrder = () => {
-    const { getTotalcartAmt, getDiscount, productsList, cartItems, url, token } = useContext(StoreContext);
+    const { getTotalcartAmt, getDiscount, productsList, cartItems, url, token, userId} = useContext(StoreContext);
     const navigate = useNavigate();
     const [data, setData] = useState({
         firstname: "",
@@ -24,7 +24,7 @@ const PlaceOrder = () => {
     const onChangehandler = (e) => {
         const name = e.target.name;
         const value = e.target.value;
-        setData(data => ({ ...data, [name]: value }))
+        setData(data => ({ ...data, [name]: value }));
     }
 
     const placeOrder = async (event) => {
@@ -38,9 +38,10 @@ const PlaceOrder = () => {
             }
         })
         let orderData = {
+            userId: userId,
             address: data,
             items: orderItems,
-            amount: getTotalcartAmt + 40
+            amount: Number(getTotalcartAmt() - (getTotalcartAmt()*getDiscount())) + 40
         }
         let response = await axios.post(url + "/api/order/place", orderData, { headers: { token } });
         if (response.data.success) {
@@ -65,8 +66,8 @@ const PlaceOrder = () => {
                 <div className="place-order-left">
                     <p className="title">Delivery Information</p>
                     <div className="multi-fields">
-                        <input name="firstName" value={data.firstname} onChange={onChangehandler} type="text" placeholder="First name" required />
-                        <input name="lastName" value={data.lastname} onChange={onChangehandler} type="text" placeholder="Last name" required />
+                        <input name="firstname" value={data.firstname} onChange={onChangehandler} type="text" placeholder="First name" required />
+                        <input name="lastname" value={data.lastname} onChange={onChangehandler} type="text" placeholder="Last name" required />
                     </div>
                     <input name="email" value={data.email} onChange={onChangehandler} type="email" placeholder="Email address" required />
                     <input name="street" value={data.street} onChange={onChangehandler} type="text" placeholder="Street" required />
@@ -101,7 +102,7 @@ const PlaceOrder = () => {
                         </li>
                     </ul>
 
-                    <button onClick={() => { }} className='cart-rent-btn'>Shop Now</button>
+                    <button type='submit' className='cart-rent-btn'>PROCEED TO PAYMENT</button>
                 </div>
             </form>
         </div>
