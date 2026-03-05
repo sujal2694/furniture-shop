@@ -76,12 +76,12 @@ const Cart = () => {
             </li>
             <li className='cart-total-price'>
               <p>Delivery Fees:</p>
-              <span>₹{deliveryFees}</span>
+              <span>₹{getTotalcartAmt()===0?0:deliveryFees}</span>
             </li>
             <hr className='section' />
             <li className='cart-total-bill'>
               <p>Total:</p>
-              <span>₹{Number(totalCartAmt) + Number(deliveryFees)}</span>
+              <span>₹{getTotalcartAmt()===0?0:Number(totalCartAmt) + Number(deliveryFees)}</span>
             </li>
           </ul>
 
