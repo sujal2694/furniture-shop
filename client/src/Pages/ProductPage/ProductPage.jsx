@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import './ProductPage.css'
-import { assets, products } from '../../assets/assets'
+import { assets } from '../../assets/assets'
 import { StoreContext } from '../../context/StoreContext'
 
 const ProductPage = () => {

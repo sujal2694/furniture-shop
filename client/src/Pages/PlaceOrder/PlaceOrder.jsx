@@ -59,7 +59,7 @@ const PlaceOrder = () => {
         } else if (getTotalcartAmt() === 0) {
             navigate("/cart")
         }
-    }, [token])
+    }, [token, getTotalcartAmt, navigate])
     
     return (
         <div className='place-order-container'>

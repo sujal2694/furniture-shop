@@ -1,13 +1,12 @@
-import React, { useEffect, useState } from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 import axios from 'axios'
-import { assests } from '../assets/assets';
 
 const ProductsList = ({ url }) => {
   const [productsList, setProductsList] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  const fetchProducts = async () => {
+  const fetchProducts = useCallback(async () => {
     try {
       setLoading(true);
       const response = await axios.get(`${url}/api/product/list`);
@@ -24,11 +23,11 @@ const ProductsList = ({ url }) => {
     } finally {
       setLoading(false);
     }
-  }
+  }, [url]);
 
   useEffect(() => {
     fetchProducts();
-  }, [])
+  }, [fetchProducts])
   
   if (loading) {
     return <div className="text-center py-10 text-gray-500">Loading products...</div>;
