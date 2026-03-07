@@ -44,7 +44,7 @@ const LoginPage = ({ setToken, url }) => {
     return (
         <div className='w-screen h-screen'>
             <div className='flex items-center justify-center w-full h-full'>
-                <form onSubmit={onSubmit} className='lg:w-[25vw] md:w-[50vw] w-[90vw] border border-gray-200/30 rounded-2xl flex items-start justify-center flex-col p-10 shadow-2xl'>
+                <form onSubmit={onSubmit} className='lg:w-[25vw] 2xl:w-[30vw] md:w-[50vw] w-[90vw] border border-gray-200/30 rounded-2xl flex items-start justify-center flex-col p-10 shadow-2xl'>
                     <div className='text-3xl text-gray-800 uppercase font-semibold mb-5'>
                         <h1>{currState}</h1>
                     </div>

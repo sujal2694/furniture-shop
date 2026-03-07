@@ -9,7 +9,7 @@ import { Toaster } from 'react-hot-toast'
 import LoginPage from './components/LoginPage'
 
 const App = () => {
-  const url = 'http://localhost:4000'
+  const url = 'https://furniture-shop-backend-nu0y.onrender.com'
   const [token, setToken] = useState("");
   
   useEffect(() => {
