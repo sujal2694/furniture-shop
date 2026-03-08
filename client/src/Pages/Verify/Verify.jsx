@@ -1,6 +1,6 @@
 import React, { useContext, useEffect } from 'react'
 import './Verify.css'
-import { useNavigate, useSearchParams } from 'react-router-dom'
+import {useNavigate, useSearchParams} from 'react-router-dom'
 import { StoreContext } from '../../context/StoreContext'
 import axios from 'axios'
 
@@ -14,12 +14,10 @@ const Verify = () => {
 
     useEffect(()=>{
         const verifyPayment = async()=>{
-            if (!success || !orderId) {
-                navigate("/");
-                return;
-            }
             try {
                 const response = await axios.post(url+"/api/order/verify",{success,orderId});
+                console.log(response.data.data);
+                
                 if (response.data.success) {
                     navigate("/myorders");
                 }

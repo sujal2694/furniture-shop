@@ -5,8 +5,22 @@ import bcrypt from 'bcrypt'
 import validator from 'validator'
 
 
-const createToken = (id) => {
+export const createToken = (id) => {
     return jwt.sign({ id }, process.env.JWT_SECRET);
+}
+
+export const getTokenForTestUser = async (req, res) => {
+    try {
+        const user = await userModel.findOne({ email: 'test@example.com' });
+        if (!user) {
+            return res.json({ success: false, message: "Test user not found" });
+        }
+        const token = createToken(user._id);
+        res.json({ success: true, token });
+    } catch (error) {
+        console.log(error);
+        res.json({ success: false, message: "Error" });
+    }
 }
 
 export const registerUser = async (req, res) => {

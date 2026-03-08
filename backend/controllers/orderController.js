@@ -24,7 +24,7 @@ export const placeOrder = async (req, res) => {
                 },
                 unit_amount: item.price * 100
             },
-            quantity: 1
+            quantity: item.quantity
         }));
 
         line_items.push({
