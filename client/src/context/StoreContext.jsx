@@ -1,3 +1,3 @@
-import { useContext } from "react";
+import { createContext } from "react";
 
-export const StoreContext = useContext(null);
+export const StoreContext = createContext(null);

@@ -11,10 +11,10 @@ import { Toaster } from 'react-hot-toast'
 import Cart from './Pages/Cart/Cart'
 import PlaceOrder from './Pages/PlaceOrder/PlaceOrder'
 import Myorders from './Pages/Myorders/Myorders'
-import { StoreContextProvider } from './context/StoreContextProvider'
+import { StoreContext } from './context/StoreContext'
 
 const App = () => {
-  const { loginPopUp } = useContext(StoreContextProvider);
+  const { loginPopUp } = useContext(StoreContext);
   return (
     <div>
       {loginPopUp ? <LoginPage /> : ""}
