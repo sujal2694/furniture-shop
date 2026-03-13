@@ -1,7 +1,6 @@
 import React, { useContext } from 'react'
 import Navbar from './components/Navbar/Navbar'
 import LoginPage from './components/Loginpage/LoginPage'
-import { StoreContext } from './context/StoreContext' 
 import Footer from './components/Footer/Footer'
 import { Route, Routes } from 'react-router-dom'
 import Home from './Pages/Home/Home'
@@ -12,9 +11,10 @@ import { Toaster } from 'react-hot-toast'
 import Cart from './Pages/Cart/Cart'
 import PlaceOrder from './Pages/PlaceOrder/PlaceOrder'
 import Myorders from './Pages/Myorders/Myorders'
+import { StoreContextProvider } from './context/StoreContextProvider'
 
 const App = () => {
-  const { loginPopUp } = useContext(StoreContext);
+  const { loginPopUp } = useContext(StoreContextProvider);
   return (
     <div>
       {loginPopUp ? <LoginPage /> : ""}
