@@ -98,12 +98,6 @@ export const StoreContextProvider = ({ children }) => {
     return avg.toFixed(1);
   }
 
-  const fetchOrders = async (authToken) => {
-    const response = await axios.get(url + "/api/order/list", {}, { headers: { token: authToken } });
-    console.log(response.data.data);
-
-  }
-
   useEffect(() => {
     async function loadData() {
       await fetchProductsList();
@@ -111,7 +105,6 @@ export const StoreContextProvider = ({ children }) => {
       if (t) {
         setToken(t);
         await cartData(t);
-        await fetchOrders(t);
       }
     }
     loadData();
