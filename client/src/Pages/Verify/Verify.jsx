@@ -12,33 +12,31 @@ const Verify = () => {
 
     const navigate = useNavigate();
 
-    const verifyPayment = async()=>{
-        try {
-            const response = await axios.post(url+"/api/order/verify",{success,orderId});
-            console.log(response);
-            
-            if (response.data.success) {
-                navigate("/myorders");
-            }
-            else{
+    useEffect(() => {
+        const verifyPayment = async () => {
+            try {
+                const response = await axios.post(url + "/api/order/verify", { success, orderId });
+                console.log(response.data);
+
+                if (response.data.success) {
+                    navigate("/myorders");
+                } else {
+                    navigate("/");
+                }
+            } catch (error) {
+                console.error(error);
                 navigate("/");
             }
-        } catch (error) {
-            console.error(error);
-            navigate("/");
-        }
-    }
-    useEffect(()=>{
+        };
+
         verifyPayment();
-    },[verifyPayment])
+    }, [success, orderId, url, navigate]);
 
-  return (
-    <div className='verify'>
-        <div className="spinner">
-
+    return (
+        <div className='verify'>
+            <div className="spinner"></div>
         </div>
-    </div>
-  )
-}
+    );
+};
 
 export default Verify

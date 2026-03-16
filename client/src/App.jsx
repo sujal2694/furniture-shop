@@ -12,6 +12,7 @@ import Cart from './Pages/Cart/Cart'
 import PlaceOrder from './Pages/PlaceOrder/PlaceOrder'
 import Myorders from './Pages/Myorders/Myorders'
 import { StoreContext } from './context/StoreContext'
+import Verify from './Pages/Verify/Verify';
 
 const App = () => {
   const { loginPopUp } = useContext(StoreContext);
@@ -27,6 +28,7 @@ const App = () => {
         <Route path='/cart' element={<Cart />} />
         <Route path='/placeorder' element={<PlaceOrder/>}/>
         <Route path='/myorders' element={<Myorders/>} />
+        <Route path='/verify' element={<Verify/>} />
       </Routes>
       <Footer />
       <Toaster />
