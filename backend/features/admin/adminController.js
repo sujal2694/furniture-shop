@@ -2,7 +2,7 @@ import jwt from 'jsonwebtoken'
 import 'dotenv/config'
 import bcrypt from 'bcrypt'
 import validator from 'validator'
-import { adminModel } from '../models/adminModel.js'
+import { adminModel } from './adminModel.js'
 
 
 const createToken = (id) => {

@@ -2,11 +2,12 @@ import express from 'express'
 import cors from 'cors'
 import 'dotenv/config'
 import { connectDB } from './config/db.js';
-import { cartRouter } from './routes/cartRoutes.js';
-import { productRouter } from './routes/productRoute.js';
-import { adminRouter } from './routes/adminRoute.js';
-import { orderRouter } from './routes/orderRoute.js';
-import userRouter from './routes/userRoute.js';
+import userRouter from './features/user/userRoute.js';
+import { cartRouter } from './features/cart/cartRoutes.js';
+import { productRouter } from './features/product/productRoute.js';
+import { adminRouter } from './features/admin/adminRoute.js';
+import { orderRouter } from './features/order/orderRoute.js';
+
 
 const app = express();
 app.use(express.json());

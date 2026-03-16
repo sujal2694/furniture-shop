@@ -1,6 +1,6 @@
 import express from 'express'
-import { addTocart, getCart, removeFromcart } from '../controllers/cartController.js'
-import authMiddleware from '../middleware/nameAuth.js';
+import { addTocart, getCart, removeFromcart } from './cartController.js'
+import authMiddleware from '../../middleware/nameAuth.js';
 
 
 
