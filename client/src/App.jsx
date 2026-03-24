@@ -13,6 +13,7 @@ import PlaceOrder from './Pages/PlaceOrder/PlaceOrder'
 import Myorders from './Pages/Myorders/Myorders'
 import { StoreContext } from './context/StoreContext'
 import Verify from './Pages/Verify/Verify';
+import Product from './components/Product/Product'
 
 const App = () => {
   const { loginPopUp } = useContext(StoreContext);
@@ -29,6 +30,7 @@ const App = () => {
         <Route path='/placeorder' element={<PlaceOrder/>}/>
         <Route path='/myorders' element={<Myorders/>} />
         <Route path='/verify' element={<Verify/>} />
+        <Route path='/product' element={<Product />} />
       </Routes>
       <Footer />
       <Toaster />
