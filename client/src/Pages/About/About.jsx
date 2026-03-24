@@ -1,10 +1,13 @@
 import React from 'react';
+import './About.css';
 
 const About = () => {
   return (
-    <div style={{padding: '48px', textAlign: 'center'}}>
-      <h1>About Us</h1>
-      <p style={{maxWidth:700, margin:'18px auto', color:'#444'}}>This is a small demo About page. Add your content here.</p>
+    <div className='about'>
+      <div className='about-head'>
+        <h1>About <span>Us</span></h1>
+        <p>Welcome to our website! We are dedicated to providing you with the best experience possible. Our team is passionate about delivering high-quality content and services to our users. Thank you for visiting us!</p>
+      </div>
     </div>
   )
 }

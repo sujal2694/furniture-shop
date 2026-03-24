@@ -6,13 +6,14 @@
 .product-page .product-page-title h1 {
     text-align: center;
     font-size: 50px;
-    font-family: "DM Serif Text", sans-serif;
+    font-family: "Source Serif 4", serif;
     font-weight: 600;
     letter-spacing: 0.7px;
     margin-top: 30px;
 }
 
 .product-page .product-page-title h1 span {
+    font-family: "Source Serif 4", serif;
     color: #55aff8;
     letter-spacing: 0.7px;
 }
