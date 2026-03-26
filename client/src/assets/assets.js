@@ -63,7 +63,7 @@ export const products = {
       discount: 50,
       ratings: 3.3,
       category: "sofa",
-      description: "",
+      description: "A versatile wooden convertible sofabed that effortlessly transitions from a stylish sofa to a comfortable bed, making it perfect for compact homes and guest rooms. The warm brown finish adds a classic charm to any living space, while the sturdy wooden frame ensures long-lasting durability. Ideal for those who want smart, space-saving furniture without compromising on comfort.",
     },
     {
       _id:2,
@@ -73,7 +73,7 @@ export const products = {
       ratings: 4.7,
       discount: 56,
       category: "sofa",
-      description: "",
+      description: "This contemporary L-shaped modular sofa set combines luxurious soft velvet suede fabric with a sleek modern design, creating an elegant centerpiece for your living room. The included ottoman adds extra seating or footrest flexibility, making it perfect for relaxed lounging. Its modular build allows easy rearrangement to suit any room layout.",
     },
     {
       _id:3,
@@ -83,7 +83,7 @@ export const products = {
       ratings: 3.2,
       category: "sofa",
       discount: 53,
-      description: "",
+      description: "The WESTIDO Orlando offers premium leatherette upholstery that is easy to clean and maintain, making it an excellent choice for families and pet owners. Designed to seat three comfortably, it features a sturdy frame and high-density foam cushions for lasting support. Backed by a 1-year warranty, this sofa blends style and reliability at an attractive price point.",
     },
     {
       _id:4,
@@ -93,7 +93,7 @@ export const products = {
       discount: 60,
       ratings: 5,
       category: "sofa",
-      description:"",
+      description:"Crafted with indulgently soft velvet suede fabric, this 3-seater L-shape modular sofa delivers both comfort and a refined aesthetic for modern homes. The generous seating space makes it perfect for families or entertaining guests, while the high-density cushions retain their shape over time. Its modular design provides the flexibility to reconfigure and adapt to changing room needs.",
     },
     {
       _id:5,
@@ -103,7 +103,7 @@ export const products = {
       discount: 33,
       ratings: 3.9,
       category: "sofa",
-      description: "",
+      description: "The Duroflex Ease Plus is engineered for everyday comfort, featuring ergonomically designed cushions and a durable frame that supports years of use. Its compact 2-seater form is ideal for smaller living rooms without sacrificing comfort or style. With an impressive 3-year warranty, this sofa set is a smart, worry-free investment for your home.",
     }
   ],
 
@@ -116,7 +116,7 @@ export const products = {
       discount: 52,
       ratings: 3.5,
       category: "ac",
-      description: ""
+      description: "The Whirlpool Magicool Inverter Split AC delivers powerful 1.5-ton cooling with a 5-star energy rating, helping you save significantly on electricity bills. Its advanced inverter technology adjusts compressor speed for consistent temperature maintenance and quieter operation. Built for Indian summers, it features robust cooling performance even at high ambient temperatures."
     },
     {
       _id:7,
@@ -126,7 +126,7 @@ export const products = {
       discount: 40,
       ratings: 3.9,
       category: "ac",
-      description: "",
+      description: "Powered by AI technology, this Godrej inverter AC intelligently adapts cooling based on room occupancy and usage patterns for maximum energy efficiency. The 5-in-1 convertible mode lets you adjust the cooling capacity to match your needs, while the self-cleaning function keeps the coils fresh without any manual effort. A 5-year comprehensive warranty makes it one of the most reliable options in its class.",
     },
     {
       _id:8,
@@ -136,7 +136,7 @@ export const products = {
       discount: 33,
       ratings: 4,
       category: "ac",
-      description: "",
+      description: "Samsung's Bespoke AI WindFree AC uses thousands of micro air holes to disperse cool air gently without direct cold wind, ensuring a comfortable, draught-free environment. Wi-Fi connectivity allows you to control settings from anywhere via the SmartThings app, adding modern convenience to your home. Its AI Auto Cooling mode learns your preferences over time to optimize comfort and energy use automatically.",
     },
     {
       _id:9,
@@ -146,7 +146,7 @@ export const products = {
       discount: 38,
       ratings: 4,
       category: "ac",
-      description: ""
+      description: "The Cruise Inverter Split AC stands out with its advanced 7-stage air filtration system that removes dust, allergens, and bacteria, making it ideal for households with children or allergy sufferers. The 3-star inverter compressor ensures efficient cooling with reduced power consumption throughout the day. A solid choice for clean, cool, and healthy indoor air during hot Indian summers."
     },
     {
       _id:10,
@@ -156,7 +156,7 @@ export const products = {
       discount: 42,
       ratings: 4,
       category: "ac",
-      description: "",
+      description: "Voltas' trusted inverter split AC features a copper condenser coil for superior heat exchange, better durability, and easier maintenance compared to aluminium alternatives. The 4-in-1 adjustable mode lets you switch between different cooling capacities to suit varying occupancy levels and save energy. A dependable brand known for performance in extreme Indian summer conditions.",
     }
   ],
 
@@ -169,7 +169,7 @@ export const products = {
       discount: 36,
       ratings: 4.2,
       category: "refrigerator",
-      description: "",
+      description: "The Haier 185L single door refrigerator is a compact and energy-efficient choice perfect for small families, bachelors, or studio apartments. Its direct cool technology ensures uniform cooling while the large vegetable tray keeps produce fresh for longer. The anti-bacterial gasket and easy-clean interiors make daily maintenance a breeze.",
     },
     {
       _id:12,
@@ -179,7 +179,7 @@ export const products = {
       discount: 27,
       ratings: 4.3,
       category: "refrigerator",
-      description:"",
+      description:"The LG Smart Choice 446L convertible refrigerator offers generous storage space with the flexibility to convert the freezer into a fresh food section as needed. Smart Diagnosis technology helps troubleshoot issues instantly via the LG ThinQ app, saving time and service costs. Ideal for larger families who need versatile storage with smart connectivity features.",
     },
     {
       _id:13,
@@ -189,7 +189,7 @@ export const products = {
       discount: 20,
       ratings: 4.1,
       category: "refrigerator",
-      description: "",
+      description: "Samsung's 236L 3-star convertible refrigerator offers five convertible modes to adapt storage between fridge and freezer as per your requirements. The Tropical Inverter compressor is optimized for Indian voltage fluctuations and delivers consistent cooling performance. Its compact yet spacious design makes it a smart pick for medium-sized families.",
     },
     {
       _id:14,
@@ -199,7 +199,7 @@ export const products = {
       discount: 35,
       ratings: 4.1,
       category: "refrigerator",
-      description: "",
+      description: "This Haier 240L frost-free double door refrigerator eliminates the hassle of manual defrosting while maintaining optimal temperature in both compartments. The top-mount freezer design provides easy access to frequently used items in the fresh food section. With a turbo icing feature and deep freezing capability, it's built for practical everyday use.",
     },
     {
       _id:15,
@@ -209,7 +209,7 @@ export const products = {
       discount: 34,
       ratings: 4,
       category: "refrigerator",
-      description: "",
+      description: "The Samsung 350L 5-in-1 convertible refrigerator adapts to your lifestyle with five flexible modes, including an All-Freezer option for bulk freezing during festive seasons. Digital Inverter technology ensures energy efficiency, less noise, and a longer compressor lifespan. A versatile and future-ready choice for growing families with diverse storage needs.",
     }
   ],
 
@@ -222,7 +222,7 @@ export const products = {
       discount: 58,
       ratings: 4,
       category: "bed",
-      description: "",
+      description: "Handcrafted from premium Sheesham wood, this single-size platform bed brings natural warmth and rustic elegance to any bedroom. The solid wood construction ensures exceptional strength and longevity, making it a one-time investment that lasts decades. Its clean platform design pairs beautifully with both traditional and contemporary bedroom décor.",
     },
     {
       _id:17,
@@ -232,7 +232,7 @@ export const products = {
       discount: 43,
       ratings: 4,
       category: "bed",
-      description: "",
+      description: "Made from sustainably sourced solid Sheesham (Acacia) wood, this queen-size bed showcases rich natural grain patterns and robust craftsmanship. The sturdy frame supports heavy-duty use while the classic design blends seamlessly with a variety of interior styles. A timeless piece that adds earthy character and long-term value to your bedroom.",
     },
     {
       _id:18,
@@ -242,7 +242,7 @@ export const products = {
       discount: 17,
       ratings: 4.0,
       category: "bed",
-      description: "",
+      description: "This stylish wrought iron storage bed combines durable metalwork with functional under-bed storage, making the most of every inch in your bedroom. The elegant iron frame adds an artistic, boutique-hotel feel to the space while the built-in drawers keep bedding and essentials neatly organized. Perfect for urban homes where style and storage go hand in hand.",
     },
     {
       _id:19,
@@ -252,7 +252,7 @@ export const products = {
       discount: 40,
       ratings: 4,
       category: "bed",
-      description: "",
+      description: "The Klenta upholstered queen-size bed features a plush fabric headboard and a sleek modern silhouette that instantly elevates bedroom aesthetics. Thick cushioned panels provide comfortable back support for reading or relaxing in bed. Its premium fabric upholstery and solid base make it a luxurious yet practical centerpiece for the modern bedroom.",
     },
     {
       _id:20,
@@ -262,7 +262,7 @@ export const products = {
       discount: 40,
       ratings: 4,
       category: "bed",
-      description: "",
+      description: "BedCult's single-size Sheesham wood bed is built to withstand daily use with its solid wood joints and sturdy frame construction. The natural teak-toned finish highlights the wood's beautiful grain, adding organic warmth to any room. Compact and robust, it's an ideal choice for children's rooms, guest rooms, or compact living spaces.",
     }
   ],
 
@@ -275,7 +275,7 @@ export const products = {
       discount: 14,
       ratings: 4.3,
       category: "microwave",
-      description: "",
+      description: "The Panasonic 20L solo microwave is a reliable and easy-to-use kitchen appliance for reheating, defrosting, and basic cooking tasks. Its compact footprint makes it ideal for small kitchens and single-person households, while the intuitive controls ensure a hassle-free experience. Built with Panasonic's trusted quality, it delivers consistent heating performance every day.",
     },
     {
       _id:22,
@@ -285,7 +285,7 @@ export const products = {
       discount: 25,
       ratings: 4.3,
       category: "microwave",
-      description: "",
+      description: "With 27 litres of capacity and convection cooking capability, this Panasonic microwave handles everything from baking and grilling to reheating and defrosting with ease. The inverter technology ensures even and precise cooking, preventing hot or cold spots in your food. A versatile kitchen partner for families who love to cook a variety of dishes at home.",
     },
     {
       _id:23,
@@ -295,7 +295,7 @@ export const products = {
       discount: 30,
       ratings: 4.3,
       category: "microwave",
-      description: "",
+      description: "LG's 28L convection microwave combines smart inverter technology with a wide range of auto-cook menus tailored to Indian cooking preferences. The charcoal lighting cavity and even heat distribution ensure your food is cooked to perfection from all sides. Its elegant design and child lock feature make it a safe and stylish addition to any modern kitchen.",
     },
     {
       _id:24,
@@ -305,7 +305,7 @@ export const products = {
       discount: 25,
       ratings: 4.2,
       category: "microwave",
-      description: "",
+      description: "Samsung's 28L convection microwave features a slim fry technology and ceramic enamel cavity that is scratch-resistant, antibacterial, and easy to clean. The wide range of pre-set cooking modes makes it simple to prepare grills, bakes, and Indian recipes with minimal effort. A feature-packed microwave that brings restaurant-quality results to your home kitchen.",
     },
     {
       _id:25,
@@ -315,7 +315,7 @@ export const products = {
       discount: 30,
       ratings: 4.3,
       category: "microwave",
-      description: "",
+      description: "The IFB 30L convection microwave is designed for the serious home cook, offering a large capacity, steam clean function, and multi-stage cooking for complex recipes. Its advanced sensor and motorised rotisserie ensure thorough and even cooking across all food types. IFB's reputation for quality and an extensive service network make this a dependable long-term kitchen investment.",
     }
   ],
 
@@ -328,7 +328,7 @@ export const products = {
       discount: 50,
       ratings: 4,
       category: "center_table",
-      description: "",
+      description: "This 2-tier coffee table offers smart dual-level storage, keeping your living room tidy with space for books, remotes, and décor on the lower shelf. The contemporary design and neutral finish complement a wide range of sofas and living room styles. Lightweight yet sturdy, it's easy to move and rearrange as your space evolves.",
     },
     {
       _id:27,
@@ -338,7 +338,7 @@ export const products = {
       discount: 50,
       ratings: 3.5,
       category: "center_table",
-      description: "",
+      description: "Crafted from durable engineered wood and fitted with smooth-rolling wheels, this center table offers effortless mobility for flexible living arrangements. The clean, minimalist design suits modern and Scandinavian-inspired interiors perfectly. Its practical design with ample tabletop space makes it equally suitable for casual dining, working from home, or displaying décor.",
     },
     {
       _id:28,
@@ -348,7 +348,7 @@ export const products = {
       discount: 50,
       ratings: 4,
       category: "center_table",
-      description: "",
+      description: "The KASHTH retro-shaped coffee table brings a distinctive mid-century modern character to your living space with its unique organic silhouette. The warm brown finish pairs beautifully with earthy-toned sofas and wooden furniture for a cohesive, curated look. Sturdy construction ensures it stands up to everyday use while remaining a stylish conversation starter.",
     },
     {
       _id:29,
@@ -358,7 +358,7 @@ export const products = {
       discount: 50,
       ratings: 4,
       category: "center_table",
-      description: ""
+      description: "The Home Centre Clary coffee table in crisp white adds a fresh, airy feel to any living room and pairs effortlessly with both neutral and bold décor palettes. Its clean lines and smooth surface are easy to wipe down, making it a practical choice for families with young children. A timeless, versatile piece that brightens up living spaces of all sizes."
     },
     {
       _id:30,
@@ -368,7 +368,7 @@ export const products = {
       discount: 20,
       ratings: 4,
       category: "center_table",
-      description: "",
+      description: "The ARTILUXE Orchid features a stunning marble-finish top on a round nesting design, bringing a touch of luxury and sophistication to your living room. The nesting structure provides flexible use — spread them out for entertaining or stack them together to save space. Premium materials and elegant aesthetics make this table a statement piece in any contemporary home.",
     }
   ],
 }
