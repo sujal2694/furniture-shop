@@ -106,7 +106,7 @@ furniture-shop/
 |-------|----------|-------------|
 | GET | /api/products | Get all products |
 | GET | /api/products/:id | Get single product |
-| POST | ./api/users/register | Register user |
+| POST | /api/users/register | Register user |
 | POST | /api/users/login | User login |
 | POST | /api/orders | Create order |
 | GET | /api/orders/:id | Get order detailes |
