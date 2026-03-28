@@ -5,7 +5,7 @@ import { assets } from '../../assets/assets'
 import './Navbar.css'
 
 const Navbar = () => {
-    const { menu, setMenu, slider, setSlider, setLoginPopUp, token, setToken } = useContext(StoreContext);
+    const { menu, setMenu, slider, setSlider, setLoginPopUp, token, setToken, setSearchBar } = useContext(StoreContext);
 
     const navigate = useNavigate();
     const logout = () => {
@@ -34,7 +34,7 @@ const Navbar = () => {
                 </div>
 
                 <div className="nav-right">
-                    <div className='search'>
+                    <div onClick={()=> setSearchBar(true)} className='search'>
                         <img src={assets.search_icon} alt="" />
                     </div>
                     <div onClick={()=>navigate('/cart')} className='cart'>

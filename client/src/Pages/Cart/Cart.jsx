@@ -36,7 +36,7 @@ const Cart = () => {
                   const itemInfo = productsList.find((p) => p._id === itemId);
                   return qty > 0 && itemInfo ? (
                     <div key={itemId} className="cart-item-row">
-                      <img className='cart-item-img' src={`${url}/images/${itemInfo.image}`} alt="" />
+                      <img className='cart-item-img object-fit-contain' src={`${url}/images/${itemInfo.image}`} alt="" />
                       <p>{itemInfo.name}</p>
                       <span>₹{itemInfo.price}</span>
                       <p className='cart-item-quantity'>{qty}</p>

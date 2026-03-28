@@ -9,20 +9,18 @@ export const StoreContextProvider = ({ children }) => {
   const [currState, setCurrState] = useState('sign up');
   const [loginPopUp, setLoginPopUp] = useState(false);
   const [userData, setUserData] = useState({ name: '', email: '', password: '' });
-  const [token, setToken] = useState();
+  const [token, setToken] = useState(localStorage.getItem("token") || ""); 
   const [cartItems, setCartItems] = useState({});
   const [productsList, setProductsList] = useState([]);
+  const [searchBar, setSearchBar] = useState(false);
   let deliveryFees = 40;
-
 
   const addTocart = async (itemid) => {
     const id = String(itemid);
-
-    setCartItems(prev => {
-      const next = { ...prev, [id]: (prev[id] || 0) + 1 };
-      return next;
-    });
-
+    setCartItems(prev => ({
+      ...prev,
+      [id]: (prev[id] || 0) + 1
+    }));
     if (token) {
       try {
         await axios.post(url + "/api/cart/add", { itemid: id }, { headers: { token } });
@@ -34,7 +32,6 @@ export const StoreContextProvider = ({ children }) => {
 
   const removeFromcart = async (itemid) => {
     const id = String(itemid);
-
     setCartItems(prev => {
       const count = prev[id] || 0;
       if (count <= 1) {
@@ -43,7 +40,6 @@ export const StoreContextProvider = ({ children }) => {
       }
       return { ...prev, [id]: count - 1 };
     });
-
     if (token) {
       try {
         await axios.post(url + "/api/cart/remove", { itemid: id }, { headers: { token } });
@@ -64,37 +60,41 @@ export const StoreContextProvider = ({ children }) => {
     return totalAmt;
   }
 
+  
   const fetchProductsList = async () => {
-    const response = await axios.get(url + "/api/product/list");
-    if (response.data.success) {
-      setProductsList(response.data.data);
+    try {
+      const response = await axios.get(url + "/api/product/list");
+      if (response.data.success) {
+        setProductsList(response.data.data);
+      }
+    } catch (err) {
+      console.error("Failed to fetch products", err);
     }
   }
 
+  
   const cartData = async (authToken) => {
-    const response = await axios.post(url + "/api/cart/get", {}, { headers: { token: authToken } });
-    setCartItems(response.data.cartData);
+    try {
+      const response = await axios.post(url + "/api/cart/get", {}, { headers: { token: authToken } });
+      if (response.data.cartData) {
+        setCartItems(response.data.cartData);
+      }
+    } catch (err) {
+      console.error("Failed to fetch cart", err);
+    }
   }
 
   const getDiscount = () => {
     const ids = Object.keys(cartItems);
-    if (ids.length === 0 || productsList.length === 0) {
-      return 0;
-    }
-
+    if (ids.length === 0 || productsList.length === 0) return 0;
     const discounts = ids
       .map((itemId) => {
         const itemInfo = productsList.find((p) => p._id === itemId);
         return itemInfo ? Number(itemInfo.discount) : 0;
       })
       .filter((d) => !isNaN(d));
-
-    if (discounts.length === 0) {
-      return 0;
-    }
-    const sum = discounts.reduce((acc, cur) => acc + cur, 0);
-    const avg = sum / discounts.length;
-
+    if (discounts.length === 0) return 0;
+    const avg = discounts.reduce((acc, cur) => acc + cur, 0) / discounts.length;
     return avg.toFixed(1);
   }
 
@@ -111,27 +111,21 @@ export const StoreContextProvider = ({ children }) => {
   }, [])
 
   const contextValue = {
-    menu,
-    setMenu,
-    slider,
-    setSlider,
-    currState,
-    setCurrState,
-    loginPopUp,
-    setLoginPopUp,
+    menu, setMenu,
+    slider, setSlider,
+    currState, setCurrState,
+    loginPopUp, setLoginPopUp,
     url,
-    userData,
-    setUserData,
-    token,
-    setToken,
+    userData, setUserData,
+    token, setToken,
     cartItems,
     addTocart,
     removeFromcart,
     getTotalcartAmt,
-    productsList,
-    setProductsList,
+    productsList, setProductsList,
     getDiscount,
     deliveryFees,
+    searchBar, setSearchBar,
   };
 
   return <StoreContext.Provider value={contextValue}>{children}</StoreContext.Provider>;
