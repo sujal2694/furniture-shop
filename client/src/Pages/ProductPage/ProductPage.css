@@ -46,21 +46,7 @@
     margin-top: 4px;
 }
 
-.products .item:nth-child(21) .item-img,
-.item:nth-child(22) .item-img,
-.item:nth-child(23) .item-img,
-.item:nth-child(24) .item-img,
-.item:nth-child(25) .item-img,
-.item:nth-child(6) .item-img,
-.item:nth-child(7) .item-img,
-.item:nth-child(8) .item-img,
-.item:nth-child(9) .item-img,
-.item:nth-child(10) .item-img,
-.item:nth-child(11) .item-img,
-.item:nth-child(12) .item-img,
-.item:nth-child(13) .item-img,
-.item:nth-child(14) .item-img,
-.item:nth-child(15) .item-img {
+.object-fit{
     object-fit: contain;
 }
 

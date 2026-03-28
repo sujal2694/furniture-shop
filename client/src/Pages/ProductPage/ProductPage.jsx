@@ -14,11 +14,11 @@ const ProductPage = () => {
         {productsList.map((item, index) => {
           return (
             <div className='item' key={index}>
-              <img className='item-img' src={`${url}/images/${item.image}`} alt="" />
+              <img className={`item-img ${(item.category === "ac" || item.category === "refrigerator") ? 'object-fit' : ''}`} src={`${url}/images/${item.image}`} alt="" />
               <h3 className='item-name'>{item.name}</h3>
               <h4 className='item-price'>₹{item.price}</h4>
               <div className="add-icon">
-                {!cartItems[item._id]
+                {!cartItems[item._id] 
                   ? (<img onClick={() => addTocart(item._id)} className='add-to-cart-btn' src={assets.add_cart_icon} alt="" />)
                   : (<div className='add-remove-btn' id='hidden'>
                     <img onClick={() => addTocart(item._id)} className='increment' src={assets.add_icon_green} alt="" />

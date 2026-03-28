@@ -50,7 +50,7 @@ const Cart = () => {
             </div>
           </div> : <div className='empty'>
             <p>Your cart is empty</p>
-            <button onClick={() => navigate("/products")}>Rent Now</button>
+            <button onClick={() => navigate("/products")}>Shop Now</button>
           </div>}
       </div>
 
