@@ -5,7 +5,7 @@ import { assets } from '../../assets/assets'
 import './Navbar.css'
 
 const Navbar = () => {
-    const { menu, setMenu, slider, setSlider, setLoginPopUp, token, setToken, setSearchBar } = useContext(StoreContext);
+    const { menu, setMenu, slider, setSlider, setLoginPopUp, token, setToken, setSearchBar, adminURL } = useContext(StoreContext);
 
     const navigate = useNavigate();
     const logout = () => {
@@ -26,11 +26,17 @@ const Navbar = () => {
                         <img src={assets.cross_icon} alt="" />
                     </div>
                     <ul className="nav-list">
-                        <li onClick={() => {setMenu("home"), navigate('/')}} className="nav-list-item" id={menu === "home" ? "menu" : ""}>Home</li>
-                        <li onClick={() => {setMenu("about"), navigate('/about')}} className="nav-list-item" id={menu === "about" ? "menu" : ""}>about</li>
-                        <li onClick={() => { setMenu("products"), navigate('/products') }} className="nav-list-item" id={menu === "products" ? "menu" : ""}>products</li>
-                        <li onClick={() => {setMenu("contact"), navigate('/contact')}} className="nav-list-item" id={menu === "contact" ? "menu" : ""}>contact us</li>
+                        <li onClick={() => {setMenu("home"), navigate('/'), setSlider(false)}} className="nav-list-item" id={menu === "home" ? "menu" : ""}>Home</li>
+                        <li onClick={() => {setMenu("about"), navigate('/about'), setSlider(false)}} className="nav-list-item" id={menu === "about" ? "menu" : ""}>about</li>
+                        <li onClick={() => { setMenu("products"), navigate('/products'), setSlider(false) }} className="nav-list-item" id={menu === "products" ? "menu" : ""}>products</li>
+                        <li onClick={() => {setMenu("contact"), navigate('/contact'), setSlider(false)}} className="nav-list-item" id={menu === "contact" ? "menu" : ""}>contact us</li>
                     </ul>
+                </div>
+
+                <div className="admin-btn">
+                    <a href={adminURL} target="_blank" rel="noopener noreferrer">
+                        <button>Admin</button>
+                    </a>
                 </div>
 
                 <div className="nav-right">

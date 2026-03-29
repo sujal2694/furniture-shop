@@ -4,6 +4,7 @@ import { StoreContext } from './StoreContext';
 
 export const StoreContextProvider = ({ children }) => {
   const url = 'http://localhost:4000';
+  const adminURL = "https://furniture-shop-admin-jqtb.onrender.com/"
   const [menu, setMenu] = useState('home');
   const [slider, setSlider] = useState(false);
   const [currState, setCurrState] = useState('sign up');
@@ -126,6 +127,7 @@ export const StoreContextProvider = ({ children }) => {
     getDiscount,
     deliveryFees,
     searchBar, setSearchBar,
+    adminURL,
   };
 
   return <StoreContext.Provider value={contextValue}>{children}</StoreContext.Provider>;
