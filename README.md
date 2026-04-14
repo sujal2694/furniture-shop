@@ -1,4 +1,4 @@
-# Furniture shop
+# CasaLuxe - Furniture shop
 A full-stack E-commerce furniture store with a customer facing storefront, backend API, and admin dashboard.
 
 ## Live Demo
