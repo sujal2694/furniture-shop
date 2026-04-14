@@ -3,7 +3,7 @@ import axios from 'axios';
 import { StoreContext } from './StoreContext';
 
 export const StoreContextProvider = ({ children }) => {
-  const url = 'http://localhost:4000';
+  const url = 'https://furniture-shop-backend-nu0y.onrender.com';
   const adminURL = "https://furniture-shop-admin-jqtb.onrender.com/"
   const [menu, setMenu] = useState('home');
   const [slider, setSlider] = useState(false);
