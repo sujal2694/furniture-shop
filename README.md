@@ -90,9 +90,9 @@ A full-stack E-commerce furniture store with a customer facing storefront, backe
 
 ```txt
 furniture-shop/
-├── frontend/        # Customer-facing store
-├── admin/           # Admin dashboard
-├── backend/         # API server
+├── frontend/        
+├── admin/           
+├── backend/         
 │   ├── controllers/
 │   ├── models/
 │   ├── routes/

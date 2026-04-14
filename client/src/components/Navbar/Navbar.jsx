@@ -18,7 +18,7 @@ const Navbar = () => {
             <div className='nav'>
                 <div className="logo">
                     <i onClick={() => setSlider(true)} className='bx bx-menu'></i>
-                    <h1 onClick={() => navigate('/')}>Shop</h1>
+                    <img onClick={() => navigate('/')} src={assets.logo_img} alt="" />
                 </div>
 
                 <div id={slider ? "links" : "hidden"}>

@@ -9,7 +9,7 @@ const Navbar = ({ setToken }) => {
   }
   return (
     <div className='flex items-center justify-between py-5 px-5 lg:w-[85vw] m-auto border-b border-gray-400/30'>
-      <h1 className='text-4xl'>Shop</h1>
+      <img className='w-40' src={assests.logo} alt="" />
       <div className='relative'>
         <div className='group'>
           <img src={assests.profile_icon} alt="" />

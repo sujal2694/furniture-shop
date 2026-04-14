@@ -1,4 +1,5 @@
 import hero_img from './hero-img.jpeg'
+import logo_img from './logo.jpg'
 
 import cross_icon from './cross_icon.png'
 import profile_icon from './profile_icon.png'
@@ -43,6 +44,7 @@ import microwave_img_5 from './microwave-img-5.webp'
 
 export const assets = {
   hero_img,
+  logo_img,
   search_icon,
   profile_icon,
   cross_icon,
