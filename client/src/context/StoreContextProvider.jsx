@@ -3,8 +3,8 @@ import axios from 'axios';
 import { StoreContext } from './StoreContext';
 
 export const StoreContextProvider = ({ children }) => {
-  const url = 'https://casa-luxe-backend.vercel.app/';
-  const adminURL = "https://casa-luxe-admin.vercel.app/"
+  const url = 'https://casa-luxe-server.onrender.com';
+  const adminURL = "https://casa-luxe-admin.onrender.com"
   const [menu, setMenu] = useState('home');
   const [slider, setSlider] = useState(false);
   const [currState, setCurrState] = useState('sign up');
