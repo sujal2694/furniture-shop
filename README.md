@@ -4,9 +4,9 @@ A full-stack E-commerce furniture store with a customer facing storefront, backe
 ## Live Demo
 | Application | URL |
 |----------|----------|
-| Store   | https://furniture-shop-p0zs.onrender.com |
-| Admin Panel   | https://furniture-shop-admin-jqtb.onrender.com  |
-| API | https://furniture-shop-backend-nu0y.onrender.com |
+| Store   | https://casa-luxe.vercel.app/ |
+| Admin Panel   | https://casa-luxe-backend.vercel.app/  |
+| API | https://casa-luxe-admin.vercel.app/ |
 
 ## Features
 ### Customer Store

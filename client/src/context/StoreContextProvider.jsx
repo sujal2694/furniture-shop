@@ -3,8 +3,8 @@ import axios from 'axios';
 import { StoreContext } from './StoreContext';
 
 export const StoreContextProvider = ({ children }) => {
-  const url = 'https://furniture-shop-backend-nu0y.onrender.com';
-  const adminURL = "https://furniture-shop-admin-jqtb.onrender.com/"
+  const url = 'https://casa-luxe-backend.vercel.app/';
+  const adminURL = "https://casa-luxe-admin.vercel.app/"
   const [menu, setMenu] = useState('home');
   const [slider, setSlider] = useState(false);
   const [currState, setCurrState] = useState('sign up');
